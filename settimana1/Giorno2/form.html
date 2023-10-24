@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="table.html" alt="home page">Home</a></li>
+      <li><a href="form.html" alt="Form">Form</a></li>
+    </ul>
+
+    <form>
+      <lable for="username">Username</lable>
+      <input type="text" id="username" name="username" />
+    </form>
+
+    <hr />
+    <form action="action.php" method="get">
+
+        <!--Gruppo anagrafica-->
+      <fieldset>
+        <legend>anagrafica</legend>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required/>
+
+        <label for="cognome">Cognome </label>
+        <input type="text" id="cognome" name="cognome" required/>
+
+        <label for="dataNascita">Data di nascita</label>
+        <input type="date" id="dataNascita" name="dataNascita" required/>
+
+        <p></p>
+        <label for="indirizzo">Indirizzo </label>
+        <textarea id="indirizzo" name="indirizzo" required>
+                <!-- <label for="via">Via </label> -->
+                <!-- <input type="text" id="via" name="via"> -->
+
+                <!--perche sto testo si vede anche se è in commento?-->
+        </textarea>
+
+        <p></p>
+        <label for="telefono">Telefono </label>
+        <input type="tel" id="telefono" name="telefono" />
+
+        <label for="email">email </label>
+        <input type="email" id="email" name="email" />
+
+        <label for="password">Password </label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          maxlength="16"
+          minlength="8"
+        />
+      </fieldset>
+
+      <!--Gruppo competenze-->
+      <fieldset>
+        <legend>Competenze</legend>
+
+        <input type="checkbox" name="HTML" id="html" />
+        <label for="html">HTML</label> <br />
+
+        <input type="checkbox" name="CSS" id="css" />
+        <label for="html">CSS</label> <br />
+
+        <input type="checkbox" name="JS" id="js" />
+        <label for="html">JS</label> <br />
+
+        <input type="checkbox" name="PHP" id="php" />
+        <label for="html">PHP</label>
+      </fieldset>
+
+      <!-- Gruppo tipologia corso-->
+      <fieldset>
+        <legend>Tipologia di corso</legend>
+        <label for="corso">Corso scelto</label>
+        <select name="corso" id="corso" required>
+          <option value="" selected></option>
+          <option value="frontEnd">Front-End</option>
+          <option value="backEnd">Back-End</option>
+          <option value="fullStack">Full Stack</option>
+        </select>
+        <br />
+        <label for="durata">Tipo di corso</label><br />
+
+        <input type="radio" id="partMatt" name="durata" />
+        <label for="partMatt">Part-time (mattina)</label><br />
+
+        <input type="radio" id="partSera" name="durata" />
+        <label for="partSera">Part-time (sera)</label><br />
+
+        <input type="radio" id="fullTime" name="durata" />
+        <label for="fullTime">Full-time </label> <br>
+
+
+        <label for="pagamento">Numero rate</label>
+        <input
+          type="number"
+          id="pagamento"
+          name="pagamento"
+          min="3"
+          max="6"
+        /> <span>(inserire numero tra 3 e 6)</span>
+      </fieldset>
+      <button type="submit" id="invia">INVIA</button>
+      <button type="reset" id="cancella">Cancella</button>
+    </form>
+   
+  </body>
+</html>
