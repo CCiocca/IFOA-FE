@@ -3,13 +3,12 @@ body{
     margin: 0 auto;
     width: vw ;
     max-width: 100%;
-    font: 'georgia serif' 
+    font-family: Georgia, 'Times New Roman', Times, serif;  
 }
 
 
 .centrato {text-align: center;}
 
-header {max-width: 100%}
 header img {
     padding: 5px;
     width: 30% 
@@ -32,7 +31,8 @@ header div p{
 .alignRight{text-align: left;}
 
 #mainImage video{ 
-    border-radius: 2%; box-shadow: 8px 8px 8px solid black ;}
+    border-radius: 2%; 
+    box-shadow: 50px 50px 50px solid black ;}
 /* manca ombra img*/
 
 #mainImage figcaption {
