@@ -1,0 +1,70 @@
+
+body{
+    margin: 0 auto;
+    width: vw ;
+    max-width: 100%;
+    font: 'georgia serif' 
+}
+
+
+.centrato {text-align: center;}
+
+header {max-width: 100%}
+header img {
+    padding: 5px;
+    width: 30% 
+}
+header div p{
+    color:rgb(10, 98, 98) ; 
+    background-color:beige;
+    padding: 15px;
+    border-top: 2px solid black
+     }
+
+#cima span { font-weight: 700;}
+
+.riduciwidth{
+    margin: 0 auto;
+    width: vw ; 
+    max-width: 80%;}
+
+
+.alignRight{text-align: left;}
+
+#mainImage video{ 
+    border-radius: 2%; box-shadow: 8px 8px 8px solid black ;}
+/* manca ombra img*/
+
+#mainImage figcaption {
+    padding: 10px;
+    color: grey;
+}
+
+#featured h4 {color: brown;}
+#featured a {color: rgb(10, 98, 98)}
+#featured {
+    line-height: 0px;
+    border-left: 2px solid
+    /* #FDFBF1 */;
+margin-left:;
+border-left: 3px solid;
+padding-left:10px}
+
+/* finire bordino*/
+
+.recipes {padding-top: 20px;}
+.recipes h2 {
+    font-weight:600 ;
+    padding-bottom: 20px;
+    border-bottom: 1px solid  rgb(10, 98, 98);
+}
+
+.recipes h4 {padding-top:20px; padding-bottom: 0px; line-height: 0px;}
+
+.recipes li  {line-height: 30px;}
+
+
+
+
+
+footer a {color: rgb(10, 98, 98)}
