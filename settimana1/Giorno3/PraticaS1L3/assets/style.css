@@ -1,5 +1,5 @@
 
-body{
+html, body{
     margin: 0 auto;
     width: vw ;
     max-width: 100%;
@@ -8,6 +8,9 @@ body{
 
 
 .centrato {text-align: center;}
+/* va cambiato con margin 0, auto 
+align-text si usa solo per testo e img
+per box si usa margin: 0 auto*/
 
 header img {
     padding: 5px;

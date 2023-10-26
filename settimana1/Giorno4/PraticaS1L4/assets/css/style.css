@@ -1,0 +1,88 @@
+/* IMPOSTAZIONI GENERALI */
+
+body {margin: 0, auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-image: url(../img/sfondo.png);}
+
+
+
+/* HEADER */
+
+/* .boxShadow{ margin: 20px 20px;
+    padding: 20px 20px;
+    box-shadow: 8px 8px 8px 2px grey;}
+*/
+
+    .intestaz {
+    margin: 20px 20px;
+    padding: 20px 20px;
+    box-shadow: 8px 8px 8px grey, -8px -8px 8px grey;
+    text-align: center;
+background-image: linear-gradient(#029ec3, #046c85);
+color: white;
+}
+
+
+.intestaz img {width: 30%}
+.intestaz a {color: white;
+;}
+
+/* manca mettere pallini allineati a elenco e trasformare in stelline */
+
+/* MAIN */
+
+.mainAside { margin: 20px 20px;
+    padding: 20px 20px;
+    box-shadow: 8px 8px 8px grey, -8px -8px 8px grey;
+background-color: white;}
+
+
+
+
+/* ELEMENTI NEL MAIN - ARTICLE */
+
+h1 {font-size: 24pt;
+    font-style: ;}
+    .sottotitoli {color: rgb(165, 165, 165);}
+
+    article span {color: fuchsia}
+
+    .grigio {
+        color: black;
+        background-color: rgb(168, 168, 168); 
+        border: 1px solid black ; 
+        border-radius: 5px;}
+
+/* TABELLE */
+.tabella caption{font-style: italic;}
+table {
+    border: solid black;
+    text-align: center;
+}
+
+/* finire tabelle*/
+
+
+iframe {width: 100%;
+height: 20%;
+border-radius: 20px;}
+/* FORM */
+
+.form{background-color: rgb(215, 215, 215);
+    padding 10px 10px}
+/* perche non mi mette i margini?*/
+
+h3 {text-align: center;}
+/* perche non allinea ? non fa prorpio scrivere center*/
+
+
+/* ELEMENTI NELL' ASIDE */
+
+/* FOOTER */
+footer {margin: 20px 20px;
+    padding: 20px 20px;
+    box-shadow: 8px 8px 8px grey, -8px -8px 8px grey;
+background-image: linear-gradient(#055567, #2e393c) }
+
