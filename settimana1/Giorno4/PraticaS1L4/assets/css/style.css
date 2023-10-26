@@ -29,6 +29,18 @@ body {
 }
 .intestaz a {
   color: white;
+  text-decoration: none;
+}
+
+.intestaz ul{
+    list-style-type: none;
+    margin-block-start: 0px;
+    padding-inline-start: 0px;
+
+}
+
+.intestaz li::before {
+    content: '⭐'
 }
 
 /* manca mettere pallini allineati a elenco e trasformare in stelline */
@@ -63,22 +75,41 @@ article span {
   border-radius: 5px;
 }
 
+a {color: rgb(60, 187, 187);}
+
+
+
 /* TABELLE */
 .tabella caption {
-  font-style: italic;
+  font-style: italic
 }
+
 table {
-  border: solid black;
+  border-top: solid rgb(68, 68, 222);
+  border-bottom: solid rgb(68, 68, 222);
+
+  border-collapse: collapse;
   text-align: center;
 }
 
-/* finire tabelle*/
+thead {
+    color: white;
+    background-color: rgb(68, 68, 222);
+}
+
+tr:nth-child(even){
+    background-color:antiquewhite ;
+}
 
 iframe {
   width: 100%;
   height: 20%;
   border-radius: 20px;
+  margin: 30px 0px
 }
+
+
+
 /* FORM */
 
 form {
@@ -87,14 +118,30 @@ form {
 }
 
 /* perche non mi mette i padding?*/
+
+
+
 #email {
-  border-color: none;
+  border: none;
+  border-bottom: dotted;
+  padding: 5px
 }
+
+#button {
+    background-color: darkblue;
+    color: white;
+    padding: 5px;
+}
+
+
+
+
+
 
 h3 {
   text-align: center;
 }
-/* perche non allinea ? non fa prorpio scrivere center*/
+/* perche non allinea ? non fa prorpio scrivere center; scrivendo prima il colore fa scrivere center, poi cancello il colore; mistero della fede*/
 
 /* ELEMENTI NELL' ASIDE */
 .artCorr {
@@ -105,6 +152,7 @@ h3 {
 }
 .date {
   text-align: right;
+  font-size: 8pt;
 }
 
 /* FOOTER */
@@ -117,3 +165,5 @@ footer {
   text-align: center;
   font-size: 10pt;
 }
+
+footer a {color:fuchsia}
