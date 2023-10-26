@@ -1,12 +1,12 @@
 /* IMPOSTAZIONI GENERALI */
 
-body {margin: 0, auto;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    background-image: url(../img/sfondo.png);}
-
-
+body {
+  margin: 0, auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background-image: url(../img/sfondo.png);
+}
 
 /* HEADER */
 
@@ -15,88 +15,105 @@ body {margin: 0, auto;
     box-shadow: 8px 8px 8px 2px grey;}
 */
 
-    .intestaz {
-    margin: 20px 20px;
-    padding: 20px 20px;
-    box-shadow: 8px 8px 8px grey, -8px -8px 8px grey;
-    text-align: center;
-background-image: linear-gradient(#029ec3, #046c85);
-color: white;
+.intestaz {
+  margin: 20px 20px;
+  padding: 20px 20px;
+  box-shadow: 8px 8px 8px grey, -8px -8px 8px grey;
+  text-align: center;
+  background-image: linear-gradient(#029ec3, #046c85);
+  color: white;
 }
 
-
-.intestaz img {width: 30%}
-.intestaz a {color: white;
-;}
+.intestaz img {
+  width: 30%;
+}
+.intestaz a {
+  color: white;
+}
 
 /* manca mettere pallini allineati a elenco e trasformare in stelline */
 
 /* MAIN */
 
-.mainAside { margin: 20px 20px;
-    padding: 20px 20px;
-    box-shadow: 8px 8px 8px grey, -8px -8px 8px grey;
-background-color: white;}
-
-
-
+.mainAside {
+  margin: 20px 20px;
+  padding: 20px 20px;
+  box-shadow: 8px 8px 8px grey, -8px -8px 8px grey;
+  background-color: white;
+}
 
 /* ELEMENTI NEL MAIN - ARTICLE */
 
-h1 {font-size: 24pt;
-    font-style: ;}
-    .sottotitoli {color: rgb(165, 165, 165);}
+h1 {
+  font-size: 24pt;
+  font-style: ;
+}
+.sottotitoli {
+  color: rgb(165, 165, 165);
+}
 
-    article span {color: fuchsia}
+article span {
+  color: fuchsia;
+}
 
-    .grigio {
-        color: black;
-        background-color: rgb(168, 168, 168); 
-        border: 1px solid black ; 
-        border-radius: 5px;}
+.grigio {
+  color: black;
+  background-color: rgb(168, 168, 168);
+  border: 1px solid black;
+  border-radius: 5px;
+}
 
 /* TABELLE */
-.tabella caption{font-style: italic;}
+.tabella caption {
+  font-style: italic;
+}
 table {
-    border: solid black;
-    text-align: center;
+  border: solid black;
+  text-align: center;
 }
 
 /* finire tabelle*/
 
-
-iframe {width: 100%;
-height: 20%;
-border-radius: 20px;}
+iframe {
+  width: 100%;
+  height: 20%;
+  border-radius: 20px;
+}
 /* FORM */
 
 form {
-    background-color: rgb(215, 215, 215);padding: 10px ;}
+  background-color: rgb(215, 215, 215);
+  padding: 10px;
+}
 
 /* perche non mi mette i padding?*/
-#email{border-color: none;}
+#email {
+  border-color: none;
+}
 
-
-h3 {text-align: center;}
+h3 {
+  text-align: center;
+}
 /* perche non allinea ? non fa prorpio scrivere center*/
 
-
 /* ELEMENTI NELL' ASIDE */
-.artCorr{ 
-    background-color: rgb(215, 215, 215);
-    padding: 10px ;
-    margin: 10px;
-    line-height: 0pt;
+.artCorr {
+  background-color: rgb(215, 215, 215);
+  padding: 10px;
+  margin: 10px;
+  line-height: 0pt;
 }
-.date{
-text-align: right;}
+.date {
+  text-align: right;
+}
 
 /* FOOTER */
-footer {margin: 20px 20px;
-    padding: 20px 20px;
-    box-shadow: 8px 8px 8px grey, -8px -8px 8px grey;
-background-image: linear-gradient(#086d84, #4b4f50); 
-color:white;
-text-align: center;
-font-size: 10pt;}
-
+footer {
+  margin: 20px 20px;
+  padding: 20px 20px;
+  box-shadow: 8px 8px 8px grey, -8px -8px 8px grey;
+  background-image: linear-gradient(#086d84, #4b4f50);
+  color: white;
+  text-align: center;
+  font-size: 10pt;
+}
