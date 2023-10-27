@@ -33,10 +33,10 @@ body {font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
  /*HEADER*/
  header{
     background-color: black;
-    padding: 7%;
+    padding: 2%; /*modificato*/
     text-align: left;}
  header img{
-    width: 20%;} /*modificato*/
+    width: 10%;} /*modificato*/
 
 
  /* MAIN */
@@ -64,7 +64,7 @@ body {font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 
 
 #section2 img {
-    width: 400px; /*modificato*/
+    width:; /*modificato*/
     border-radius: 50%;
     }
 #scritteImmagine {
@@ -91,6 +91,7 @@ cite{font-style: normal;}
     margin: 5px; /*modificato*/
     display: inline-block; /*modificato*/
     width: 30%; /*modificato*/
+    vertical-align: top;
     } 
 .card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);}
 
