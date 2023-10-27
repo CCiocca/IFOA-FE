@@ -118,6 +118,7 @@ cite {
   margin: 5px; /*modificato*/
   display: inline-block; /*modificato*/
   width: 30%; /*modificato*/
+  height: 100%;/*modificato*/
   vertical-align: top; /*modificato*/
 }
 .card:hover {
