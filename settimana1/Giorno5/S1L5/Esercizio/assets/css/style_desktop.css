@@ -34,9 +34,9 @@ body {font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
  header{
     background-color: black;
     padding: 7%;
-    text-align: center;}
+    text-align: left;}
  header img{
-    width: 40%;}
+    width: 20%;} /*modificato*/
 
 
  /* MAIN */
@@ -49,7 +49,7 @@ body {font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 
 #section1{
     background-image: url(/settimana1/Giorno5/S1L5/Esercizio/assets/images/banner.jpg);
-    background-position: center;
+    background-position: top; /*modificato*/
     background-size: cover;}
 
 #section1 input {
@@ -60,12 +60,18 @@ body {font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;}
-#section1 input:hover{box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);}
+#section1 input:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);} 
 
 
 #section2 img {
-    width: 100%;
-    border-radius: 50%;}
+    width: 400px; /*modificato*/
+    border-radius: 50%;
+    }
+#scritteImmagine {
+    display: inline-block;
+    width: 40%;
+    text-align: left;
+    margin: 100px}
 
 
 #section3 {
@@ -79,14 +85,17 @@ cite{font-style: normal;}
 #cit2{font-size: 18pt; margin: 0px;}
 #cit3{font-size: 12pt; margin: 0px}
 
-/* #section4 */
+#section4 {} 
 .card{
     border: 1px solid #dee1e3;
-    margin:30px 0px} 
+    margin: 5px; /*modificato*/
+    display: inline-block; /*modificato*/
+    width: 30%; /*modificato*/
+    } 
 .card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);}
+
 .card img{
-    width: 100%;
-}
+    width: 100%; height:100%}
 
  /* FOOTER */
  footer{
