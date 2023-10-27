@@ -1,0 +1,111 @@
+/* Your styles here */
+
+/* 
+Font
+Body: #393d41 – 1.2rem – Open Sans – interlinea 1.65
+Headings: #25a2c3 – Montserrat (bold) – interlinea 1.5
+Footer: #c8e7f0
+Footer Heading: white
+Footer link: #c8e7f0
+
+Colori sfondo
+Header: black
+Pulsante: #f04c2f – Montserrat (bold) – bold
+Testimonianze: #e22d0e
+Footer: #25a2c3
+
+Bordi
+Bordo schede: #dee1e3
+
+ */
+
+ html, body{
+    margin:0, auto;
+    padding: 0;
+    box-sizing: border-box;}
+    
+body {font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+     color: #393d41;
+     font-size: 1.2rem;
+     line-height: 1.65;
+     text-align: center; }
+
+ /*HEADER*/
+ header{
+    background-color: black;
+    padding: 7%;
+    text-align: center;}
+ header img{
+    width: 40%;}
+
+
+ /* MAIN */
+ #section1, #section2, #section3, #section4, footer {padding:40px}
+ h1, h2, h3, h4{
+    color: #25a2c3;
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 700; 
+    line-height: 1.5;}
+
+#section1{
+    background-image: url(/settimana1/Giorno5/S1L5/Esercizio/assets/images/banner.jpg);
+    background-position: center;
+    background-size: cover;}
+
+#section1 input {
+    background-color: #f04c2f;
+    font-family: 'Montserrat', sans-serif;;
+    font-weight: 700; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;}
+#section1 input:hover{0 8px 16px 0 rgba(0,0,0,0.2);}
+
+
+
+#section2 img {
+    width: 100%;
+    border-radius: 50%;}
+
+
+#section3 {
+    background-color: #e22d0e;
+    color: white;}
+#section3 h3{
+    color:white;
+    font-size: 24pt;}
+#cit1{font-style: italic;}
+cite{font-style: normal;}
+#cit2{font-size: 18pt; margin: 0px;}
+#cit3{font-size: 12pt; margin: 0px}
+
+/* #section4 */
+.card{
+    border: 1px solid #dee1e3;
+    margin:30px 0px} 
+.card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);}
+.card img{
+    width: 100%;
+}
+
+ /* FOOTER */
+ footer{
+    color: #c8e7f0;
+    background-color: #25a2c3;
+    text-align: center;}
+
+footer h3{
+    color: white;}
+footer a{
+    color: #c8e7f0;}
+footer address{
+    font-style: normal;}
+footer p{
+    margin: 0%;}
+footer hr{
+    color:white;
+    width: 70% ;
+    margin-bottom: 30px;
+    margin-top: 30px;}
+ 
