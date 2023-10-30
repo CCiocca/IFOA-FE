@@ -12,20 +12,25 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA 
-string = un insieme di parole
-number = numero intero o decimale
-boolean = variabile vero/falzo 0/1
-null = valore vuoto assegnato ad una variabile
+string = una sequenza di caratteri
+number = numero 
+boolean = variabile di tipo vero/falzo 
+null = valore intenzionalmente assente assegnato ad una variabile - variabile vuota 
 undefined = valore della variabile non ancora definito
+data= data in ogni suo formato
+
+pseudotipi (tipi complessi o derivati)
+array
+oggetto
 */
 
 /* ESERCIZIO 2
- Crea una variable chiamata "name" e assegna ad essa il tuo nome, sotto forma di stringa.
+ Crea una variable chiamata 'name' e assegna ad essa il tuo nome, sotto forma di stringa.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-// let myName = "Chiara"
-// console.log(myName);
+ let myName = 'Chiara'
+ console.log(myName);
 
 /* ESERCIZIO 3
  Scrivi il codice necessario ad effettuare un addizione (una somma) dei numeri 12 e 20.
@@ -33,37 +38,42 @@ undefined = valore della variabile non ancora definito
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-// let numero1 = 12;
-// let numero2 = 20;
-// console.log(numero1+numero2);
+ let numero1 = 12;
+ let numero2 = 20;
+ console.log(numero1+numero2);
+//  oppure
+let Nnumero1 = 12;
+ let Nnumero2 = 20;
+ let Nsomma =Nnumero1+Nnumero2;
+ console.log(Nsomma)
 
 /* ESERCIZIO 4
- Crea una variable di nome "x" e assegna ad essa il numero 12.
+ Crea una variable di nome 'x' e assegna ad essa il numero 12.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-// var x=12
+ let x=12;
 
 /* ESERCIZIO 5
-  Riassegna un nuovo valore alla variabile "name" già esistente: il tuo cognome.
+  Riassegna un nuovo valore alla variabile 'name' già esistente: il tuo cognome.
   Dimostra l'impossibilità di riassegnare un valore ad una variabile dichiarata con il costrutto const.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-// myName= "Cioccarelli"
-// console.log (myName)
+ myName= 'Cioccarelli'
+ console.log (myName)
 
-// const colorePreferito = "blu"
-// console.log(colorePreferito)
-// colorePreferito = "verde"
+ const colorePreferito = 'blu'
+ console.log(colorePreferito)
+ colorePreferito = 'verde'
 
 
 /* ESERCIZIO 6
- Esegui una sottrazione tra i numeri 4 e la variable "x" appena dichiarata (che contiene il numero 12).
+ Esegui una sottrazione tra i numeri 4 e la variable 'x' appena dichiarata (che contiene il numero 12).
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-// console.log(4-x)
+ console.log(4-x)
 
 /* ESERCIZIO 7
  Crea due variabili: "name1" e "name2". Assegna a name1 la stringa "john", e assegna a name2 la stringa "John" (con la J maiuscola!).
@@ -72,10 +82,20 @@ undefined = valore della variabile non ancora definito
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let name1 = "john"
-let name2 = "John"
-name2 = "john"
-const nome = (name1 !== name2)? "vero" : "falso"
+let name1 = 'john'
+let name2 = 'John'
+name2 = 'john'
+const nome = (name1 !== name2)? 'vero' : 'falso'
 console.log(nome)
 
 
+//soluz prof
+riga 85
+riga 86
+let verifica = name1 === name2;
+console.log(verifica)
+
+console.log (name1===name2)
+
+
+// document.getElementById('nome').innerHTML 
