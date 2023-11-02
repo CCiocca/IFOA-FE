@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAlcolo età</title>
+    <link rel="stylesheet" href="asset/css/style.css">
+  </head>
+  <body>
+    <div id="container"></div>
+    <h1>Verifica tua eta</h1>
+    <form>
+      <fieldset>
+        <label for="nome">Inserisci il tuo nome</label>
+        <input type="text" name="nome" id="nome" />
+        <br />
+        <label for="anno">Inserisci l'anno di nascita</label>
+        <input type="number" name="anno" id="anno"/>
+      </fieldset>
+    </form>
+    <h3 id="errore"></h3>
+    <br />
+    <button type="button" id="verifica" onclick="eventHandler()">VERIFICA</button>
+
+    <script src="asset/js/app.js"></script>
+  </body>
+</html>
