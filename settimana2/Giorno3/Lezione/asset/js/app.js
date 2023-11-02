@@ -27,26 +27,39 @@ let nome;
 let anno;
 let eta;
 let stato;
-let errore = document.getElementById("errore");
+let errore = document.getElementById('errore');
 
+/* ha fatto varie modifiche troop veloci per essere scritte, vedi file committato
 function eventHandler() {
   leggiForm();
-  if (anno >= 1900 && anno <= 2023 && nome != "") {
-    errore.innerHTML = "";
+  if (controlla ()) {
+    errore.innerHTML = '&nbsp;';
     calcolaEta();
     verifica();
     scrivi();
-    cancellaForma();
+    cancellaForm();
   } else {
-    errore.innerHTML =
-      "Attenzione! Compilare tutti i campi e inserire un numero tra 1900 e 2023";
     return;
   }
 }
 
+
+function controlla (){
+  if (anno >= 1900 && anno <= 2023 && nome != '') {
+    errore.innerHTML = "&nbsp;";
+    return true
+}  else  {
+  errore.innerHTML =
+    'Attenzione! Compilare tutti i campi e inserire un numero tra 1900 e 2023';
+  return false;
+}
+}
+
+*/
+
 function leggiForm() {
-  nome = document.getElementById("nome").value;
-  anno = document.getElementById("anno").value;
+  nome = document.getElementById('nome').value;
+  anno = document.getElementById('anno').value;
   console.log(nome, anno); //una volta che vedo che funzione lo elimino
 }
 
@@ -56,8 +69,17 @@ function calcolaEta() {
 }
 
 function verifica() {
-  stato = eta >= 18 ? "maggiorenne" : "minorenne";
+  stato = eta >= 18 ? 'maggiorenne' : 'minorenne';
   console.log(stato);
 }
 
-function scrivi()
+function scrivi(){
+  document.getElementById('mioNome').innerHTML = 'Ciao ' + nome;
+  document.getElementById('miaVerifica').innerHTML = 'La tua eta è ' + eta + '; sei ' + stato;
+  }
+
+  function cancellaForm (){
+    document.getElementById('nome').value = '';
+    document.getElementById('anno').value = '';
+  }
+
