@@ -8,132 +8,135 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-.bgBlue{
-    background-color: #222f3f;
+.bgBlue {
+  background-color: #222f3f;
 }
-
 
 header img {
-    width: 100px;
-    padding: 10px;
-    padding-left: 20px;
+  width: 100px;
+  padding: 10px;
+  padding-left: 20px;
 }
 
-.bgGray{
-    background-color: #354656;
+.bgGray {
+  background-color: #354656;
 }
 
 nav {
-    margin-top: -16px;
+  margin-top: -16px;
 }
 
 nav ul {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
-nav li{
-    display: inline-block; 
-    padding: 4px;
-    list-style: none;
-    color: white;
-
+nav li {
+  display: inline-block;
+  padding: 4px;
+  list-style: none;
+  color: white;
 }
-
 
 /* regole generali per classi */
-.centrati{
-    text-align: center;
+.centrati {
+  text-align: center;
 }
-.testoBianco{
-    color: white;
+.testoBianco {
+  color: white;
 }
 
 .margine25 {
-    margin: 25px;
+  margin: 25px;
 }
 
 main {
-    background-color: #e9edee;
-    margin-top: -24px;
-    padding-top: 8px;
+  background-color: #e9edee;
+  margin-top: -15px;
+  margin-bottom: -24px;
+  padding-top: 7px;
 }
-#arancio{
-    background-color: #f56600;
+#arancio {
+  background-color: #f56600;
 }
 
 #arancio p {
-    padding: 5px
+  padding: 5px;
 }
 
+#holiday {
+  padding-top: 20px;
+}
 
-
-#guides{
-    background-image: url(/settimana2/Giorno5_progettoSettimanale/AmazonPage/assets/images/bg-image.png);
-    background-repeat: repeat-y;
-    background-size: contain;
-    height: 200px;
-    font-size: x-large;
+#guides {
+  background-image: url(/settimana2/Giorno5_progettoSettimanale/AmazonPage/assets/images/bg-image.png);
+  background-repeat: repeat-y;
+  background-size: contain;
+  height: 200px;
+  font-size: x-large;
 }
 
 /* non va */
-.centratiVertic{
-    vertical-align: middle;
+.centratiVertic {
+  vertical-align: middle;
 }
-
 
 /* cards */
-#cards{
-    background-color: white;
+#cards {
+  background-color: white;
 }
-.didascalia{
-    display: inline-block;
-    padding: 10px;
-    text-align: left;
-}
-
-.azzurro{
-    color: #4a8c9d;
+.didascalia {
+  display: inline-block;
+  text-align: left;
+  font-weight: 500;
+  margin: 0;
 }
 
-.card{
-        margin: 2%;
-        display: inline-block;
-        width: 20%; 
-        height: 100%;
-        box-shadow: 4px 4px 8px gray;
-        border-radius: 10px;
+.azzurro {
+  color: #4a8c9d;
+  font-weight: 800;
+}
 
-      }
+.paddingAltoSx {
+  padding-left: 25px;
+  padding-top: 20px;
+}
+
+.card {
+  margin: 2%;
+  display: inline-block;
+  width: 20%;
+  height: 300px;
+  vertical-align: top;
+  box-shadow: 8px 8px 16px rgb(180, 180, 180);
+  border-radius: 20px;
+}
 .card img {
-    border-radius: 10px;
-        width: 100%;
-        ;
-
-
-
-
-
-
-
-        heigh
-      } 
-
-
-      /* fotoGrandi */
-.margineAlto0{
-    margin-top: 0px ;
+  border-radius: 10px;
+  max-width: 100%;
+  width: fit-content;
+  height: 100%;
 }
-#fotoGrandi img{
-    width: 100%;
+
+/* fotoGrandi */
+.margineAlto0 {
+  margin-top: 0px;
+}
+
+.paddingBassoX {
+  padding-bottom: 30px;
+}
+
+#fotoGrandi img {
+  width: 100%;
 }
 
 /* footer */
-
-footer img {
-    width: 150px;
-    padding: 50px;
+#back {
+  padding: 20px;
+  font-weight: 800;
 }
 
-
-
+footer img {
+  width: 200px;
+  padding: 50px;
+}
