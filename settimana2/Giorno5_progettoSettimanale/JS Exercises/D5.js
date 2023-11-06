@@ -175,3 +175,4 @@ for (let i = 0; i < charactersArray.length; i++) {
   }
 }
 console.log(nuovoArray);
+
