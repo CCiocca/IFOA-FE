@@ -1,1 +1,49 @@
 /* Your styles here */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.bgBlue{
+    background-color: #222f3f;
+    padding-left: 20px;
+}
+
+
+header img {
+    width: 100px;
+    padding: 10px;
+}
+
+.bgGray{
+    background-color: #354656;
+    padding-left: 30px;
+}
+
+nav {
+    margin-top: -16px;
+}
+
+nav ul {
+    padding: 0px;
+}
+nav li{
+    display: inline-block; 
+    padding: 4px;
+    list-style: none;
+    color: white;
+
+}
+
+footer img {
+    width: 150px;
+    padding: 50px;
+}
+
+
+
