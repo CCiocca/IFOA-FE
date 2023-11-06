@@ -49,19 +49,84 @@ nav li{
     color: white;
 }
 
+.margine25 {
+    margin: 25px;
+}
+
+main {
+    background-color: #e9edee;
+    margin-top: -24px;
+    padding-top: 8px;
+}
 #arancio{
     background-color: #f56600;
-    margin: 25px 0px;
 }
 
 #arancio p {
     padding: 5px
 }
 
+
+
 #guides{
     background-image: url(/settimana2/Giorno5_progettoSettimanale/AmazonPage/assets/images/bg-image.png);
+    background-repeat: repeat-y;
+    background-size: contain;
+    height: 200px;
+    font-size: x-large;
 }
 
+/* non va */
+.centratiVertic{
+    vertical-align: middle;
+}
+
+
+/* cards */
+#cards{
+    background-color: white;
+}
+.didascalia{
+    display: inline-block;
+    padding: 10px;
+    text-align: left;
+}
+
+.azzurro{
+    color: #4a8c9d;
+}
+
+.card{
+        margin: 2%;
+        display: inline-block;
+        width: 20%; 
+        height: 100%;
+        box-shadow: 4px 4px 8px gray;
+        border-radius: 10px;
+
+      }
+.card img {
+    border-radius: 10px;
+        width: 100%;
+        ;
+
+
+
+
+
+
+
+        heigh
+      } 
+
+
+      /* fotoGrandi */
+.margineAlto0{
+    margin-top: 0px ;
+}
+#fotoGrandi img{
+    width: 100%;
+}
 
 /* footer */
 
