@@ -1,3 +1,9 @@
+// ES5
+// Es7 aggiungere switch?
+
+
+
+
 /*
 REGOLE
 - Tutte le risposte devono essere scritte in JavaScript
@@ -135,10 +141,26 @@ console.log(deleteOne('ciao', false));
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
+function isThisAnEmail(stringa){
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(stringa)){
+    return (true)
+  } else {
+    alert("You have entered an invalid email address!")
+    return (false)
+}};
+
+console.log(isThisAnEmail('bubula@gmail.com'));
 
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+function whatDayIsIt() {
+  let oggi = new Date;
+  return giornoSettimana = oggi.getDay();
+};
+console.log('es7');
+console.log(whatDayIsIt());
+
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -153,6 +175,9 @@ console.log(deleteOne('ciao', false));
   }
 */
 
+function rollTheDices(num8){
+  
+}
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
