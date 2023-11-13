@@ -485,14 +485,27 @@ console.log('es16');
 let arrayAnni = onlyTheYears(movies)
 
 function sumAllTheYears(){
-  return arrayAnni.reduce((totale, el) => parseInt(totale) + parseInt(el))
+  return arrayAnni.reduce((totale, el) => parseInt(totale) + parseInt(el), 0)
 }
 console.log(sumAllTheYears());
+
+
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
 console.log('es17');
+
+function searchByTitle(str){
+  return movies.filter((movies)=>{
+    if (movies.Title.includes(str)){
+      return movies
+    }})
+};
+
+console.log(searchByTitle('Avengers'));
+
+
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
@@ -500,10 +513,44 @@ console.log('es17');
 */
 console.log('es18');
 
+ 
+
+function searchAndDivide(str){
+  let ogg18 = {
+    match: [],
+    unmatch: [] }
+
+  for (let i=0; i<movies.length; i++){
+      if (movies[i].Title.includes(str)){
+        ogg18.match.push(movies[i])
+      } else {
+        ogg18.unmatch.push(movies[i])
+    }}
+  return ogg18
+}
+console.log(searchAndDivide('Avengers'));
+
 /* ESERCIZIO 19
-  Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
+  Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito, privo dell'elemento nella posizione ricevuta come parametro.
 */
 console.log('es19');
+// let movies2 = {...movies};
+// console.log(movies)
+// console.log(movies)
+
+// function removeIndex(num){
+//   movies2.splice(num,1);
+//   return movies2
+// }
+
+
+function removeIndex(num){
+  movies.splice(num,1);
+  return movies
+}
+console.log(removeIndex(2));
+
+
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -512,30 +559,65 @@ console.log('es19');
 */
 console.log('es20');
 
+// const container = function () {
+// document.getElementById('container')}
+
+const container = document.getElementById('container')
+
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 console.log('es21');
+
+const td = document.querySelectorAll('td')
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
 console.log('es22');
 
+function stampaTd (){
+  //let td = document.querySelectorAll('td')
+  for (i=0; i<td.length; i++){
+    console.log(td.value)
+  }
+};
+
+stampaTd();
+
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 console.log('es23');
+
+function linkRossi (){
+  let link = document.querySelectorAll('a')
+  for (i=0; i<a.length; i++){
+    a.style.color= 'red'
+  }
+}
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
 console.log('es24');
 
+function addLi (){
+  let lista = document.getElementById('myList')
+  let li = document.createElement('li')
+  lista.appendChild(li)
+}
+
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 console.log('es25');
+
+function svuotaLista (){
+  let lista = document.getElementById('myList')
+  let li = document.createElement('li')
+  lista.appendChild(li)
+}
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
