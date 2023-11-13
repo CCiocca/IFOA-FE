@@ -674,6 +674,8 @@ function numeriPrimi (num29){
     }else {return 'questo numero non è primo'}
   }};
 
+  console.log(numeriPrimi(17))
+
 
 
 
