@@ -86,7 +86,6 @@ function dice(){
 
 dice();
 console.log(dice());
-console.log('es1');
 
 // const dado = dice()
 // console.log(dado);
@@ -137,7 +136,6 @@ function deleteOne(string, boolean) {
   }
 }
 
-console.log('es4')
 console.log(deleteOne('ciao', false));
 
 
@@ -148,16 +146,16 @@ console.log(deleteOne('ciao', false));
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
-// function onlyLetters(stringa) {
-//   let arrayStringa = stringa.split(' ');
-//   let arrayStringaNoNum = [];
-//   for (i=0; i< arrayStringa.length; i++ ){
-//     if 
-//   }
-// }
+console.log('es5');
 
-// o il negativo di parseInt?
-// cosi comunque credo veda tutto come parole, anche "4"
+function onlyLetters(stringa) {
+  let numeri= parseInt(stringa)
+  let nuovaStringa = stringa.replace(numeri, '')
+  return nuovaStringa
+}
+
+onlyLetters('I have 4 dogs')
+
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
@@ -577,7 +575,7 @@ function stampaTd (){
   }
 };
 
-stampaTd();
+// stampaTd();
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
@@ -586,12 +584,12 @@ console.log('es23');
 
 function linkRossi (){
   let link = document.querySelectorAll('a')
-  for (i=0; i<a.length; i++){
-    a.style.color= 'red'
+  for (i=0; i<link.length; i++){
+    link.style.color= 'red'
   }
 };
 
-linkRossi ();
+// linkRossi ();
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
@@ -603,7 +601,7 @@ function addLi (){
   let li = document.createElement('li')
   lista.appendChild(li)
 }
-addLi ();
+// addLi ();
 
 
 /* ESERCIZIO 25
@@ -615,7 +613,7 @@ function svuotaLista (){
   let lista = document.getElementById('myList')
   lista.innerHTML = ''
 }
-svuotaLista ();
+// svuotaLista ();
 
 
 /* ESERCIZIO 26
@@ -628,7 +626,7 @@ function addClass (){
   tr.classList.add('test')
 };
 
-addClass ();
+// addClass ();
 
 // [EXTRA] JS Avanzato
 
@@ -663,11 +661,21 @@ console.log('es28');
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+
+// se il numero da modulo 0 con un altro numero !== 1 e !==sestesso
+// allora è primo
+
 console.log('es29');
-/*
-let allNumbers = tutti i numeri ?
-se il numero da modulo 0 con un altro numero !== 1 e !==sestesso
-allora è primo
+
+function numeriPrimi (num29){
+  for(let i=2; i<num29; i++){
+    if(num29 % i !== 0){
+      return 'questo numero è primo'
+    }else {return 'questo numero non è primo'}
+  }};
+
+
+
 
 
 
