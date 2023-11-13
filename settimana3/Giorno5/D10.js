@@ -1,7 +1,4 @@
 // ES 5
-// ES 11
-
-
 
 
 /*
@@ -294,7 +291,7 @@ const ogg11 = {
 };
 
 function deleteProp (ogg, string) {
-  delete ogg.string;
+  delete ogg[`${string}`];
   return ogg 
 };
 
@@ -559,9 +556,6 @@ console.log(removeIndex(2));
 */
 console.log('es20');
 
-// const container = function () {
-// document.getElementById('container')}
-
 const container = document.getElementById('container')
 
 /* ESERCIZIO 21
@@ -569,7 +563,7 @@ const container = document.getElementById('container')
 */
 console.log('es21');
 
-const td = document.querySelectorAll('td')
+const td = document.querySelectorAll('td');
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
@@ -595,7 +589,9 @@ function linkRossi (){
   for (i=0; i<a.length; i++){
     a.style.color= 'red'
   }
-}
+};
+
+linkRossi ();
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
@@ -607,6 +603,8 @@ function addLi (){
   let li = document.createElement('li')
   lista.appendChild(li)
 }
+addLi ();
+
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
@@ -615,15 +613,22 @@ console.log('es25');
 
 function svuotaLista (){
   let lista = document.getElementById('myList')
-  let li = document.createElement('li')
-  lista.appendChild(li)
+  lista.innerHTML = ''
 }
+svuotaLista ();
+
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 console.log('es26');
 
+function addClass (){
+  let tr = document.querySelectorAll('tr');
+  tr.classList.add('test')
+};
+
+addClass ();
 
 // [EXTRA] JS Avanzato
 
@@ -639,6 +644,8 @@ console.log('es26');
 
 */
 console.log('es27');
+
+
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
