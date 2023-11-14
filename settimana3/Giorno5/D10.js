@@ -1,6 +1,3 @@
-// ES 5
-
-
 /*
 REGOLE
 - Tutte le risposte devono essere scritte in JavaScript
@@ -149,12 +146,12 @@ console.log(deleteOne('ciao', false));
 console.log('es5');
 
 function onlyLetters(stringa) {
-  let numeri= parseInt(stringa)
-  let nuovaStringa = stringa.replace(numeri, '')
+  let numeri= parseInt(stringa);
+  let nuovaStringa = stringa.replace(numeri, '');
   return nuovaStringa
 }
 
-onlyLetters('I have 4 dogs')
+console.log(onlyLetters('I have 4 dogs'))
 
 
 /* ESERCIZIO 6
@@ -179,7 +176,7 @@ console.log(isThisAnEmail('bubula@gmail.com'));
 console.log('es7');
 
 function whatDayIsIt() {
-  let oggi = new Date;
+  let oggi = new Date();
   let giornoSettimana = oggi.getDay();
   switch(giornoSettimana){
     case 0:
