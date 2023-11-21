@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+
+<div id="quiz-container">
+    <h1 id="question"></h1>
+    <ul id="answers"></ul>
+    <button onclick="nextQuestion()">Prossima Domanda</button>
+</div>
+
+<div id="result-container" style="display: none;">
+    <h2>Risultati del Quiz</h2>
+    <p id="correct-percentage"></p>
+    <p id="incorrect-percentage"></p>
+</div>
+
+<script>
+
+
+    var currentQuestion = 0;
+    var correctAnswers = 0;
+    var timer;
+
+    function startQuiz() {
+        showQuestion();
+    }
+
+    function showQuestion() {
+        var questionElement = document.getElementById("question");
+        var answersElement = document.getElementById("answers");
+        var resultContainer = document.getElementById("result-container");
+        var correctPercentageElement = document.getElementById("correct-percentage");
+        var incorrectPercentageElement = document.getElementById("incorrect-percentage");
+
+        if (currentQuestion < questions.length) {
+            var currentQuizData = questions[currentQuestion];
+
+            // Mostra la domanda
+            questionElement.textContent = currentQuizData.question;
+
+            // Combina le risposte corrette e errate e mescola l'array
+            var allAnswers = [currentQuizData.correct_answer, ...currentQuizData.incorrect_answers];
+            allAnswers = shuffleArray(allAnswers);
+
+            // Aggiungi le risposte alla lista HTML
+            answersElement.innerHTML = "";
+            allAnswers.forEach(function (answer) {
+                var li = document.createElement("li");
+                li.textContent = answer;
+                li.addEventListener("click", function () {
+                    checkAnswer(answer, currentQuizData.correct_answer);
+                });
+                answersElement.appendChild(li);
+            });
+            
+            // Avvia il timer di 30 secondi solo quando la domanda viene mostrata
+            startTimer();
+        } else {
+            // Il quiz è completo, mostra i risultati
+            resultContainer.style.display = "block";
+            correctPercentageElement.textContent = "Percentuale di risposte corrette: " + calculatePercentage(correctAnswers, questions.length) + "%";
+            incorrectPercentageElement.textContent = "Percentuale di risposte sbagliate: " + calculatePercentage(questions.length - correctAnswers, questions.length) + "%";
+        }
+    }
+
+    function checkAnswer(selectedAnswer, correctAnswer) {
+        if (selectedAnswer === correctAnswer) {
+            correctAnswers++;
+        }
+    }
+
+    function nextQuestion() {
+        clearTimeout(timer); // Resetta il timer
+        currentQuestion++;
+        showQuestion();
+    }
+
+    function startTimer() {
+        timer = setTimeout(function () {
+            nextQuestion();
+        }, 30000); // 30 secondi
+    }
+
+    function calculatePercentage(value, total) {
+        return ((value / total) * 100).toFixed(2);
+    }
+
+    // Funzione per mescolare un array (Algoritmo di Fisher-Yates)
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Avvia il quiz quando la pagina è caricata
+    window.onload = startQuiz;
+</script>
+
+</body>
+</html>
