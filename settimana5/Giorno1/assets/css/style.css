@@ -276,7 +276,7 @@ footer a {
   header nav{
     display: inline-block;
     text-align: right;
-    float: right;
+    float: right];
   }
 
   header nav li{
