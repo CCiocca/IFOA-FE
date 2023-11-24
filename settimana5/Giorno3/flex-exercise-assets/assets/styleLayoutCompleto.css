@@ -26,6 +26,7 @@ nav{
     border-radius: 50px;
     gap: 20px;
     margin: 10px 0px;
+    flex-basis: 50vw;
     
 }
 .nav{
@@ -37,26 +38,35 @@ nav{
 
     font-size: 0.8rem;
     color: #64270f;
+    font-weight: 700;
     border: none;
-    /* text-align: center; */
-    order:2;
+    text-align: center; 
 }
 
-
-/* perche vengono cosi alti? line-height */
 
 .navShop{
     display: flex;
     justify-content: space-around;
     gap:10%;
     font-weight: 700;
-    font-size: 1rem;
-    order:1;
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 787px) {
+    .navShop{
+        order: -1
+    }
+    
+}
+
+@media screen and (max-width: 576px){
+    .navShop{
+        order: -1
+    }
 }
 
 .navShop img{
     max-width: 50px;
-    
 }
 
 
@@ -69,19 +79,24 @@ h1,h2{
 /* card */
 .prodotti{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-right: 20px;
+    gap: 20px;
 }
+
 .card{
     width: 16vw;
     border-radius: 50px;
     overflow: hidden;
     background-color: #fbf7e3;
+    flex: 1 1;
 }
 
 .divImmagine {
     display: flex;
     justify-content: center;
+    max-height: 150px;
 }
 
 .card img{
@@ -107,11 +122,13 @@ h1,h2{
     font-size: 1rem;
     font-weight: 700;
     margin: 0;
+    text-align: center;
 }
 
 .descrizione p {
     font-size: 0.8rem;
     margin: 0;
+    text-align: center;
 }
 
 .prezzo{
@@ -125,10 +142,12 @@ h1,h2{
 }
 .bottone{
     border-radius: 50px;
-    font-size: 1rem;
-    padding: 10px 50px;
+    font-size: 0.8rem;
+    padding: 10px 20px;
     background-color: #f3df85;
     border: none;
+    color: #64270f;
+
 }
 
 
@@ -162,6 +181,8 @@ article h3{
 
 article p{
     color: #64270f;
+    font-size: 0.8rem;
+
 }
 
 
@@ -176,3 +197,41 @@ article p{
 }
 
 
+
+
+/* elenco breakpoints mediaquery */
+/* mobile */
+@media screen and (min-width: 320px) and (max-width: 480px){
+    
+}
+
+/* tablet? */
+@media screen and (min-width: 481px) and (max-width: 768px){
+   
+}
+
+/* medium  */
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .card:nth-child(5){
+        display: none;
+       }
+     .card:nth-child(4){
+         display: none;
+        }
+}
+
+/* medium large */
+@media screen and (min-width: 769px) and (max-width: 1200px){
+    .card:nth-child(5){
+        display: none;
+       }
+    article{
+        flex-direction: column-reverse;
+    }
+    
+}
+
+/* extralarge */
+@media screen and (min-width: 1201px) {
+    
+}
