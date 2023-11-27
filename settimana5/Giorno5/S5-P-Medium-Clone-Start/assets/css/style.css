@@ -119,10 +119,23 @@ nav button:hover{
 
 
 
+/* titolone giallo */
+
 
 .titolo{
     background-color: #ffc017;
     border-bottom: 1px solid black;
+}
+
+.containerTitolo{
+    display: flex;
+    align-items: center;
+    gap: 200px;
+}
+
+
+.containerM{
+    margin-right: -50px;
 }
 
 
@@ -152,6 +165,11 @@ h1{
     background-color: black;
 }
 
+
+
+.continerM{
+    
+}
 
 /* trending */
 
@@ -213,7 +231,7 @@ h1{
 
     /* nav ul li:nth-last-child(2) {
         display: none; */
-      }
+      
 
 
 
@@ -327,8 +345,14 @@ aside hr{
     
 }
 
-/* tablet */
-@media screen and (min-width:560px) and (max-width:728px) {
+
+
+
+
+
+
+/* tablet e mobile inverte ordine aside */
+@media screen and (max-width:728px) {
     aside{
         order: 0; 
 }
@@ -337,3 +361,11 @@ aside hr{
 }
 }
 
+
+
+
+@media screen and (max-width:728px) {
+    .trending{
+        margin-bottom: 300px;
+    }
+}
