@@ -1,0 +1,268 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+
+}
+
+.padding{
+    padding: 30px 60px;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    background-color: #ffc017 ;
+    border-bottom: 1px solid black;
+
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header:hover{
+    background-color: white;
+}
+
+
+nav{
+    width: 25vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+nav button{
+    color: white;
+    background-color: black;
+    border-radius: 30px;
+height: 40px;
+padding: 0 20px;
+
+transition: background-color 300ms linear, color 300ms linear
+;}
+
+nav button:hover{
+    cursor: pointer;
+}
+
+
+
+
+.titolo{
+    background-color: #ffc017;
+    border-bottom: 1px solid black;
+
+}
+
+.titolo:hover{
+    background-color: white;
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 7rem;
+    font-weight: 400;
+}
+
+.titolo h2{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.titolo button{
+    font-size: 1.2rem;
+    color: white;
+    background-color: black;
+    border-radius: 30px;
+    padding: 10px 40px;
+}
+
+
+.titolo button:hover{
+    cursor: pointer;
+    background-color: black;
+}
+
+
+/* trending */
+
+.titoloTrending{
+    display: flex;
+    gap: 10px
+}
+
+.titoloTrending h3{
+    font-size: 0.9rem;
+}
+
+.gruppoArticoli{
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+}
+
+.trendingArticolo{
+    display: flex;
+    flex: 33%;
+    gap:20px
+}
+
+.primaRiga{
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.numeroArticolo{
+   color: gray; 
+   font-weight: 700;
+   font-size: 2rem;
+   margin-top: -10px;
+}
+
+
+
+.autoreArticolo , .dataArticolo, .topicSezione{
+    font-size: 0.8rem;
+}
+
+.titoloArticolo{
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.logoArticolo img{
+    border-radius: 50%;
+    height: 20px;
+}
+
+
+hr{
+    color: gray;
+    margin: 50px;
+    max-width: 100%;
+}
+
+
+
+
+/* corpo */
+.corpo{
+    display: flex;
+    gap: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.corpo .titoloArticolo{
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.sottotitoloArticolo{
+    font-size: 1rem;
+}
+
+.quartaRiga{
+    display: flex;
+    justify-content: space-between;
+}
+.quartaRigaSx{
+    display: flex;
+    align-items: center;
+
+}
+
+.quartaRigaSx button{
+    border-radius: 30px;
+    padding: 5px 10px;
+    background-color: rgb(219, 219, 219);
+    border: none;
+    margin: 4px;
+}
+
+
+.articoloGenerale{
+    display: flex;
+    gap:20px;
+    margin-bottom: 40px;
+}
+
+
+
+.imgArticolo img{
+max-width: 200px;}
+
+
+/* aside */
+
+aside {
+    flex:50%;
+    display: flex;
+    flex-direction: column;
+}
+
+aside h3{
+    font-size: 1rem;
+}
+
+aside button{
+    font-size: 0.9rem;
+    border-radius: 30px;
+    padding: 10px 20px;
+    background-color: rgb(219, 219, 219);
+    border: none;
+    margin: 4px;
+}
+
+aside hr{
+    width: 100%;
+    margin: 20px 0;
+
+}
+
+
+
+.menuSecondario ul{
+    font-size: 0.9rem;
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+
+}
+
+.menuSecondario li{
+    display: inline;
+    
+}
