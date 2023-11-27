@@ -9,13 +9,14 @@ body{
 
 .padding{
     padding: 30px 60px;
-    max-width: 70%;
+    max-width: 85%;
     margin: 0 auto;
 }
 
 .container{
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 header{
@@ -23,8 +24,15 @@ header{
     top: 0;
     background-color: #ffc017 ;
     border-bottom: 1px solid black;
-
+    height: 100px
 }
+
+.sfondoBianco{
+    background-color: white;
+    transition: background-color 0.5s ease; /* Aggiunge una transizione graduale */
+}
+
+
 
 .header{
     display: flex;
@@ -32,18 +40,15 @@ header{
     align-items: center;
 }
 
-header:hover{
-    background-color: white;
-}
 
 
 nav{
-    width: 25vw;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    font-size: 1rem;
+    gap: 20px;
+    font-size: 0.9rem;
     
 }
 
@@ -61,11 +66,26 @@ nav button{
     color: white;
     background-color: black;
     border-radius: 30px;
-height: 40px;
-padding: 0 20px;
+    height: 40px;
+    padding: 0 20px;
+    border: none;
 
-transition: background-color 300ms linear, color 300ms linear
-;}
+}
+
+/* Aggiungi il tuo stile CSS qui */
+
+.bottoneVerde {
+    background-color: green;
+    transition: background-color 0.5s ease; /* Aggiunge una transizione graduale */
+  }
+
+/*se lo commento sballa tutto*/
+.bottoneNero {
+    background-color: black;
+    transition: background-color 0.5s ease; /* Aggiunge una transizione graduale */
+  }
+  
+  
 
 nav button:hover{
     cursor: pointer;
@@ -77,12 +97,8 @@ nav button:hover{
 .titolo{
     background-color: #ffc017;
     border-bottom: 1px solid black;
-
 }
 
-.titolo:hover{
-    background-color: white;
-}
 
 h1{
     font-family: 'Times New Roman', Times, serif;
@@ -129,8 +145,10 @@ h1{
 
 .trendingArticolo{
     display: flex;
-    flex: 33%;
-    gap:20px
+    flex: 1 1 33%;
+    gap:20px;
+    margin-bottom: 20px;
+    min-width: 300px
 }
 
 .primaRiga{
@@ -175,7 +193,7 @@ hr{
 /* corpo */
 .corpo{
     display: flex;
-    gap: 50px;
+    gap: 80px;
 }
 
 a{
@@ -229,6 +247,10 @@ aside {
     flex:50%;
     display: flex;
     flex-direction: column;
+    position: sticky;
+    top: 100px;
+    z-index: 3;
+    height: 500px
 }
 
 aside h3{
@@ -264,5 +286,25 @@ aside hr{
 
 .menuSecondario li{
     display: inline;
+    
+}
+
+/* tablet */
+@media screen and (min-width:500px) and (max-width:800px) {
+    aside{
+        order: 0; 
+}
+.corpo{
+    flex-direction: column-reverse;
+}
+
+
+
+
+
+
+}
+
+@media screen and (min-width: 320px) and (max-width:500px){
     
 }
