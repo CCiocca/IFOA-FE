@@ -30,21 +30,22 @@
                 <a class="nav-link" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Saldi</a>
+                <a class="nav-link" href="#week-deal">Saldi</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " aria-disabled="true">Welcome Summer
+                <a class="nav-link " aria-disabled="true" href="#welcome-summer">Welcome Summer
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " aria-disabled="true">Last Minute
+                <a class="nav-link " aria-disabled="true" href="#last-minute">Last Minute
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " aria-disabled="true">Recensioni
+                <a class="nav-link " aria-disabled="true" href="#testimonials">Recensioni
                 </a>
               </li>
             </ul>
+            
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Cerca posti da sogno" aria-label="Search">
               <button class="btn btn-outline-danger" type="submit">Cerca</button>
@@ -54,31 +55,34 @@
       </nav>
     </header>
 
-    <main class="container">
-        <div class="row p-5 bg-body-tertiary"> <!-- titolo -->
-            <h1 class="col display-1 text-secondary d-inline-block align-middle">Eveline-R </h1>
-            <p class="col fs-5 d-inline-block align-middle">-Feel the Freedom</p>
+    <main class="container mt-5">
+
+        <div class=" p-5 bg-body-tertiary"> <!-- titolo -->
+            <h1 class=" display-1 text-secondary d-inline-block align-middle">Eveline-R </h1>
+            <p class=" fs-5 d-inline-block align-middle mb-0">-Feel the Freedom</p>
 
             <hr>
 
             <h2 class=" fst-italic text-secondary ">Scopri le destinazioni piu calde del momento</h2>
 
-            <button type="button" class="col-2 btn btn-info m-2">Prenota ora</button>
+            <button type="button" class="btn btn-info m-2">Prenota ora</button>
 
         </div>
 
-        <section class=" row mt-5"> <!--sezione saldi-->
+        <section class=" mt-5 d-flex flex-column" id="week-deal"> <!--sezione saldi-->
            
-                <div class="col-10">
+                <div class="d-flex justify-content-between">
                     <h3>Saldi</h3>
-                </div>
-                <div class="col-2 text-end text-info">
-                    <p>Nascondi sezione</p>
+                    <button type="button" class="btn btn-sm btn-outline-info border-0 align-self-center mb-4"
+                    data-bs-toggle="collapse" data-bs-target="#collapseWeekDeal" aria-expanded="false"
+                    aria-controls="collapseExample">
+                    Nascondi sezione
+                </button>
                 </div>
             
-
-                <div class="col-3">
-                    <div class="card p-0 border-info" >
+            <div class="row collapse show g-2 g-md-3 g-xl-5">   <!-- collapse and show?-->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card p-0 borfer border-info" >
                         <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
                         <div class="card-body">
                         <h5 class="card-title">Titolo</h5>
@@ -88,26 +92,8 @@
                     </div>
                 </div>
 
-                <div class="col-3">
-                    <div class="card p-0 border-info" >
-                        <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
-                        <div class="card-body">
-                        <h5 class="card-title">Titolo</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-info">Prenota</a>
-                        </div>
-                    </div>
-                </div><div class="col-3">
-                    <div class="card p-0 border-info" >
-                        <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
-                        <div class="card-body">
-                        <h5 class="card-title">Titolo</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-info">Prenota</a>
-                        </div>
-                    </div>
-                </div><div class="col-3">
-                    <div class="card p-0 border-info" >
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card p-0 borfer border-info" >
                         <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
                         <div class="card-body">
                         <h5 class="card-title">Titolo</h5>
@@ -116,118 +102,137 @@
                         </div>
                     </div>
                 </div>
-                
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card p-0 borfer border-info" >
+                        <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
+                        <div class="card-body">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-info">Prenota</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-md-none d-lg-block">  <!--d-md-none d-lg-block per nascondere solo nella schermata tablet e poi far ri apparire nella schermata desktop-->
+                    <div class="card p-0 borfer border-info" >
+                        <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
+                        <div class="card-body">
+                        <h5 class="card-title">Titolo</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-info">Prenota</a>
+                        </div>
+                    </div>
+                </div>
+            </div>     
         </section>
 
-        <section class="row mt-5"> <!--sezione Welcome summer-->
-                <div class="col-10">
+        <section class="d-flex flex-column mt-5" id="welcome-summer"> <!--sezione Welcome summer-->
+                <div class=" d-flex justify-content-between">
                     <h3>Welcome summer</h3>
-                </div>
-                <div class="col-2 text-end text-info">
-                    <p>Nascondi sezione</p>
-                </div>
-
-                <div class="col-4">
-                    <div class="card p-0 shadow-lg mb-5 bg-body-tertiary rounded ">
-                        <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
-                        <div class="card-body">
-                        <h5 class="card-title">Titolo</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-info">Prenota</a>
-                        </div>
-                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-info border-0 align-self-center mb-4"
+                    data-bs-toggle="collapse" data-bs-target="#collapseWelcomeSummer" aria-expanded="false"
+                    aria-controls="collapseExample">
+                    Nascondi sezione
+                    </button>
                 </div>
 
-                <div class="col-4">
-                    <div class="card p-0 shadow-lg mb-5 bg-body-tertiary rounded ">
-                        <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
-                        <div class="card-body">
-                        <h5 class="card-title">Titolo</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-info">Prenota</a>
+                <div class="row collapse show">
+                    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                        <div class="card p-0 shadow-lg mb-5 bg-body-tertiary rounded ">
+                            <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
+                            <div class="card-body">
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-info">Prenota</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-4">
-                    <div class="card p-0 shadow-lg mb-5 bg-body-tertiary rounded ">
-                        <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
-                        <div class="card-body">
-                        <h5 class="card-title">Titolo</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-info">Prenota</a>
+                    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                        <div class="card p-0 shadow-lg mb-5 bg-body-tertiary rounded ">
+                            <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
+                            <div class="card-body">
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-info">Prenota</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-4">
-                    <div class="card p-0 shadow-lg mb-5 bg-body-tertiary rounded ">
-                        <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
-                        <div class="card-body">
-                        <h5 class="card-title">Titolo</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-info">Prenota</a>
+                    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                        <div class="card p-0 shadow-lg mb-5 bg-body-tertiary rounded ">
+                            <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
+                            <div class="card-body">
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-info">Prenota</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-4">
-                    <div class="card p-0 shadow-lg mb-5 bg-body-tertiary rounded ">
-                        <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
-                        <div class="card-body">
-                        <h5 class="card-title">Titolo</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-info">Prenota</a>
+                    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                        <div class="card p-0 shadow-lg mb-5 bg-body-tertiary rounded ">
+                            <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
+                            <div class="card-body">
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-info">Prenota</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-4">
-                    <div class="card p-0 shadow-lg mb-5 bg-body-tertiary rounded ">
-                        <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
-                        <div class="card-body">
-                        <h5 class="card-title">Titolo</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-info">Prenota</a>
+                    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                        <div class="card p-0 shadow-lg mb-5 bg-body-tertiary rounded ">
+                            <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
+                            <div class="card-body">
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-info">Prenota</a>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                        <div class="card p-0 shadow-lg mb-5 bg-body-tertiary rounded ">
+                            <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="card-img-top" alt="mare">
+                            <div class="card-body">
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-info">Prenota</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
         </section>
 
-        <section class=" container-fluid mt-5"> <!--sezione Offerta-->
-            <div class="row">
-                <div class="col">
-                    <h3>Offerta del giorno</h3>
-                </div>
-            </div>
+        <section class="d-none d-sm-block" id="day-deal"> <!--sezione Offerta-->
+                
+                <h3>Offerta del giorno</h3>
+        
 
-
-            <div class="card mb-3" >
-                <div class="row g-0">
-                  <div class="col-md-8">
+                <div class="row">
+                  <div class="col col-lg-8">
                         <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="img-fluid rounded-start" alt="...">
                   </div>
-                  <div class="col-md-4">
-                    <div class="card-body">
-                      <h5 class="card-title">Fufufu Maldives</h5>
-                        <p class="card-text"><small class="text-body-secondary">15.01.2021 - 31.01.2021</small></p>
+                  <div class="col col-lg-4">
+                      <h5 class="display-4">Fufufu Maldives</h5>
+                        <p class="font-monospace text-muted">15.01.2021 - 31.01.2021</p>
 
-                      <p class="card-text">Ville a partire da 500E non fartele sfuggire!</p>
+                      <p class="lead">Ville a partire da 500E non fartele sfuggire!</p>
                       <button type="button" class="btn btn-dark rounded-pill">Best offer</button>                    
                     </div>
-                  </div>
                 </div>
-            </div>
+          
+        
         </section>   
 
-        <section class=" container-fluid mt-5"> <!--sezione Last minute-->
-            <div class="row">
-                <div class="col">
+        <section class="my-5"  id="last-minute"> <!--sezione Last minute-->
+                <div class="col-12">
                     <h3>Last minute</h3>
                 </div>
-            </div>
 
-            <div class="row" >
                 <div class="col-2">
                     <img src="assets/images/mlewh-wow-oceanhaven-1800-hor-wide.jpg" class="img-fluid shadow-lg mb-5 bg-body-tertiary rounded" alt="...">
                 </div>
@@ -254,35 +259,74 @@
             </div>
         </section>
 
-        <section class=" container-fluid mt-5"> <!--sezione Dicono-->
-            <div class="row">
-                <div class="col">
+        <section class="row"> <!--sezione Dicono-->
+                <div class="col-12">
                     <h3 class="text-center">Dicono di noi</h3>
                 </div>
-            </div>
+            
 
-            <div class="col">
-                <div class="card mb-3 border-no" >
-                    <div class="row g-0">
-                    <div class="col-md-1">
-                            <img src="assets/images/testa.jpg" class="img-fluid  border border-info rounded-circle img-thumbnail" alt="...">
-                    </div>
-                    <div class="col-md-11">
-                        <div class="card-body">
-                        <h5 class="card-title">User</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus earum quo, laudantium fugiat cum officiis recusandae commodi praesentium animi doloremque maiores, deleniti rem eligendi illum iste soluta harum nam sequi aut temporibus quidem blanditiis odit nemo! Rerum expedita reprehenderit magnam.</p>
+                <div class="col-12">
+                    <div class="card mb-3 border-no" >
+                        <div class="row g-0">
+                            <div class="col-md-1">
+                                <img src="assets/images/testa.jpg" class="img-fluid  border border-info rounded-circle img-thumbnail" alt="..." >
+                            </div>
+                            <div class="col-md-11">
+                                <div class="card-body">
+                                    <h5 class="card-title">User</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus earum quo, laudantium fugiat cum officiis recusandae commodi praesentium animi doloremque maiores, deleniti rem eligendi illum iste soluta harum nam sequi aut temporibus quidem blanditiis odit nemo! Rerum expedita reprehenderit magnam.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    </div>
+                    </div>                    
                 </div>
+
+
+                <div class="col-12">
+                    <div class="card mb-3 border-no" >
+                        <div class="row g-0">
+                            <div class="col-md-1">
+                                <img src="assets/images/testa.jpg" class="img-fluid  border border-info rounded-circle img-thumbnail" alt="...">
+                            </div>
+                            <div class="col-md-11">
+                                <div class="card-body">
+                                    <h5 class="card-title">User</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus earum quo, laudantium fugiat cum officiis recusandae commodi praesentium animi doloremque maiores, deleniti rem eligendi illum iste soluta harum nam sequi aut temporibus quidem blanditiis odit nemo! Rerum expedita reprehenderit magnam.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+
+                <div class="col-12">
+                    <div class="card mb-3 border-no" >
+                        <div class="row g-0">
+                            <div class="col-md-1">
+                                <img src="assets/images/testa.jpg" class="img-fluid  border border-info rounded-circle img-thumbnail" alt="...">
+                            </div>
+                            <div class="col-md-11">
+                                <div class="card-body">
+                                    <h5 class="card-title">User</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus earum quo, laudantium fugiat cum officiis recusandae commodi praesentium animi doloremque maiores, deleniti rem eligendi illum iste soluta harum nam sequi aut temporibus quidem blanditiis odit nemo! Rerum expedita reprehenderit magnam.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                
             </div>
 
             
 
         </section>
-
-
     </main>
+
+        <footer class="bg-dark mb-lg-0 d-flex allign-middle">
+            <button type="button" class="btn btn-dark text-secondary border border-secondary ">Contattaci</button>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, similique!</p>
+        </footer>
+
+
 
 
 <!--
