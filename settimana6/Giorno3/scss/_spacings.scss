@@ -1,0 +1,32 @@
+$padding-default: 20px;
+$margin-default: 0 auto;
+
+
+$sizes:(
+    sm: 12px,
+    normal: 16px,
+    md: 24px,
+    lg: 32px,
+    xl: 48px,
+    xxl: 160px,
+);
+
+@mixin create-padding($direction:null){
+    @each $key, $value in $sizes{
+        .padding-#{$direction}-#{$key}{
+            @if $direction {
+                padding-#{$direction}: $value;
+            }
+            else{
+                padding: $value;
+            }
+    }
+}
+}
+
+// come richiamo il mio mixin?
+@include create-padding();
+@include create-padding(top);
+@include create-padding(bottom);
+@include create-padding(left);
+@include create-padding(right);

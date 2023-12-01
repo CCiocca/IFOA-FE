@@ -1,0 +1,20 @@
+// $textDark: black;
+// $textLight: #f4f4f4;
+// $bg-color: #f4f4f4;
+// $primaryColor: #0e6cff;
+// $secondaryColor: #ff8700;
+// $tertiaryColor: #4caf50;
+// $bgHero: #640fc5;
+
+
+// alterantiva con map oggetto (ludo)
+// definiamo mappa iniziale, facciamo var mappa anziche variabili singole
+$setColors: (
+    textDark: black,
+    textLight: #f4f4f4,
+    bg-color: #f4f4f4,
+    primaryColor: #0e6cff,
+    secondaryColor: #ff8700,
+    tertiaryColor: #4caf50,
+    bgHero: #640fc5,
+)
