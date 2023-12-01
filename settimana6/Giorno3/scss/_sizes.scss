@@ -9,5 +9,5 @@ $font-size-xxlarge: 96px;
     font-weight: 900;
     line-height: 0.95;
     margin-bottom: 1rem;
-    color: darken(map-get($setColors, bgHero, 25))
+    color: darken(map-get($setColors, bgHero), 25)
 }
