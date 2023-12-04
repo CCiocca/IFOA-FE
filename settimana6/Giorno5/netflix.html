@@ -160,7 +160,7 @@
     </div>  <!--chiusura trending now-->
 
 
-    <div class="section3 py-5">     <!--trending now--> 
+    <div class="section3 py-5">     <!--now releasea--> 
         <div><h4>Now Releases</h4></div>
         <div class="row g-1 d-flex flex-nowrap overflow-x-visible">
             
@@ -172,9 +172,84 @@
             <div class="col"><img src="Netflix-assets/assets/media/media6.jpg" alt="locandina" width="300"></div>
             <div class="col"><img src="Netflix-assets/assets/media/media7.webp" alt="locandina" width="300"></div>
         </div>    
-    </div>  <!--chiusura trending now-->
+    </div>  <!--chiusura now releasea-->
 
 
+
+
+   
+    <div class="section4 py-5">     <!----> 
+        <div><h4>Carousel</h4></div>
+                    
+<!-- tentativo 2: prendere in blocco il carosello bs e riempirlo con 1 img che in realta è un div con 6 immagini -->
+
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-1 d-flex flex-nowrap overflow-x-visible">
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media0.webp">
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media1.jpg">
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media2.webp">
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media3.webp">
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media4.jpg">
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media5.webp">
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media6.jpg">
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row g-1 d-flex flex-nowrap overflow-x-visible">
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media7.webp">
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media8.webp">
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media9.jpg">
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media10.jpg">
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media11.jpg">
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media12.jpg">
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media13.jpg">
+                        </div>
+                        
+                    </div>
+                </div>
+               
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
 
 
 
@@ -265,15 +340,106 @@
 
 
 
-
-
-
-
-
-
-
-
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+ <!-- tentativo 1: prendere pezzi di carosello da bs e riempirlo con miei film - FALLITO
+    <div class="section3 py-5">     
+        <div><h4>Now Releases</h4></div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                    <div class="row g-1 d-flex flex-nowrap overflow-x-visible">
+            
+                        <div class="col"><img src="Netflix-assets/assets/media/media0.webp" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media1.jpg" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media3.webp" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media4.jpg" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media5.webp" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media6.jpg" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media7.webp" alt="locandina" width="300"></div>
+                    </div>    
+                </div>  
+            </div>
+
+            <div class="carousel-item ">
+                <div class="movie-row">
+                    <div class="row g-1 d-flex flex-nowrap overflow-x-visible">
+            
+                        <div class="col"><img src="Netflix-assets/assets/media/media0.webp" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media1.jpg" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media3.webp" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media4.jpg" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media5.webp" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media6.jpg" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media7.webp" alt="locandina" width="300"></div>
+                    </div>    
+                </div>  
+            </div>
+
+            <div class="carousel-item ">
+                
+                    <div class="row g-1 d-flex flex-nowrap overflow-x-visible">
+            
+                        <div class="col"><img src="Netflix-assets/assets/media/media0.webp" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media1.jpg" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media3.webp" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media4.jpg" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media5.webp" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media6.jpg" alt="locandina" width="300"></div>
+                        <div class="col"><img src="Netflix-assets/assets/media/media7.webp" alt="locandina" width="300"></div>
+                    </div>    
+              
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        
+    </div>  chiusura carosello -->
+
+
+    <!-- <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="movie-row">
+                <div class="row g-1">
+                    <div class="col-md-2">
+                        <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media0.webp">
+                    </div>
+                    <div class="col-md-2">
+                        <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media1.jpg">
+                    </div>
+                    <div class="col-md-2">
+                        <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media2.webp">
+                    </div>
+                    <div class="col-md-2">
+                        <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media3.webp">
+                    </div>
+
+                    <div class="col-md-2">
+                        <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media4.jpg">
+                    </div>
+
+                    <div class="col-md-2">
+                        <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media5.webp">
+                    </div>
+
+                    <div class="col-md-2">
+                        <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media6.jpg">
+                    </div>
+
+                    <div class="col-md-2">
+                        <img class="img-fluid movie-cover" src="Netflix-assets/assets/media/media7.webp">
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>     -->
