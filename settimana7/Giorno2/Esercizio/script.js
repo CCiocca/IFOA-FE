@@ -11,7 +11,6 @@ const btnSalva = document.getElementById("btnSalva");
 const btnRimuovi = document.getElementById("btnRimuovi");
 const listaUtenti = document.getElementById("listaUtenti");
 
-const utenti = [];
 
 btnSalva.onclick = function (){
     localStorage.setItem("nomeUtente", campoNomeUtente.value);
@@ -38,18 +37,28 @@ function mostraUtenti() {
 // usando session Storage, crea un contatore che conta tempoc  che passa, si aggiorna ogni secondo
 // aggiornando pag val prosegue, chiudendo ricomincia
 
-const tempo = document.getElementById("tempo");
+        // const tempo = document.getElementById("tempo");
 
-let contatore = 0;
+        // let contatore = 0;
 
 // set interval che agigunge 1 al contatore ogni 1000ms , contatore che viene pushato in session storage?
-setInterval(function () {
-        contatore++;
-        sessionStorage.setItem("contatore", contatore);  //ogni secondo mi aggiorna il timer nel session storage
-        tempo.innerHTML = sessionStorage.getItem("contatore"); //me lo printa in tempo
-    }, 1000);
+        // setInterval(function () {
+        //         contatore++;
+        //         sessionStorage.setItem("contatore", contatore);  //ogni secondo mi aggiorna il timer nel session storage
+        //         tempo.innerHTML = sessionStorage.getItem("contatore"); //me lo printa in tempo
+        //     }, 1000);
 
 // aggiornando pag val prosegue, chiudendo ricomincia, vuol dire che il val di contatore è push in session storage
+
+
+i= sessionStorage.getItem("count") ? parseInt(sessionStorage.getItem("count")) : 0;
+const conta = function () {
+    i = i + 1
+    document.getElementById("timer").innerText = i + " secondi di sessione"
+    sessionStorage.setItem("count", i)
+  }
+
+  setInterval(conta, 1000)   //ogni secondo stampa e salva
 
 
 
