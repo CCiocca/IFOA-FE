@@ -4,8 +4,8 @@ const apiKey = "gdYjjtvro21Pauz1pqQ97w4MTumDq7mbiWY9SiMV9ctiYxsiZSTk5dRb";
 const images=[];
 
 
-function getImages(){
-    fetch(url + "mountains", {
+function getImages(query){
+    fetch(url + query, {
     method: "GET",
     headers: {
         "Content-Type": "application/json",
@@ -13,16 +13,16 @@ function getImages(){
     }
     })
     .then(response => response.json())
-    .then (data => {
-        photos=data
-        console.log(photos)
-        // return photos;
-    })
-    .loadImages()
+    // .then(data => console.log(data))
+    .then (data => loadImages(data.photos))
     .catch(err => alert(err));
 }
 
-let mountains = "mountains";
+function search(){
+    const search = document.getElementById("search").value;
+    getImages(search);
+}
+
 
 function loadImages(photos){
     const containerImages = document.getElementById("containerImages");
@@ -32,29 +32,33 @@ function loadImages(photos){
         let newImage = `
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-            
-              <img src="${element.src.small}" alt="${element.alt}"class="card-img-top" width="100%" height="225" 
-                preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Searched image" />
-             
-              <div class="card-body">
-                <h5 class="card-title">Lorem Ipsum</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">
-                      View
-                    </button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">
-                      Edit
-                    </button>
-                  </div>
-                  <small class="text-muted">9 mins</small>
-                </div>
-              </div>
+                <a href="${element.url}">
+                    <img src="${element.src.original}" alt="${element.alt}"class="card-img-top" width="100%" height="225" 
+                        preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Searched image" />
+                </a>    
+                    <div class="card-body">
+                    <a href="${element.url}">
+                        <h5 class="card-title">Lorem Ipsum</h5>
+                        <p class="card-text">
+                        This is a wider card with supporting text below as a natural
+                        lead-in to additional content. This content is a little bit
+                        longer.
+                        </p>
+                    </a> 
+                    
+                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                            View
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" >
+                            Hide
+                            </button>
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                
             </div>
           </div>
         `
@@ -63,8 +67,27 @@ function loadImages(photos){
 };
 
 
-// window.onload = () => {
 
+
+
+// function hideImg(){
+//     newImage.classList.add("d-none");
+// }
+
+
+
+
+/*
+function deleteItem(asin) {
+    const index = shoppingCartList.findIndex((book) => book.asin === asin);
+
+    if ( index !== -1 ) {
+        shoppingCartList.splice(index, 1);
+        localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartList));
+    }
+*/
+
+// window.onload = () => {
 // }
 
 
