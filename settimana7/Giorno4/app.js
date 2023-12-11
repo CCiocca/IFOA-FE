@@ -16,15 +16,15 @@ function getImages(){
     .then (data => {
         photos=data
         console.log(photos)
-        return photos;
+        // return photos;
     })
+    .loadImages()
     .catch(err => alert(err));
 }
 
 let mountains = "mountains";
 
 function loadImages(photos){
-    getImages(mountains)
     const containerImages = document.getElementById("containerImages");
     containerImages.innerHTML="";
 
