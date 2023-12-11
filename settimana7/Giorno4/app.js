@@ -14,14 +14,13 @@ function getImages(query){
     })
     .then(response => response.json())
     // .then(data => console.log(data))
-    .then (data => loadImages(data.photos))
+    .then (data => {
+        loadImages(data.photos)
+        photos = data.photos;})
     .catch(err => alert(err));
 }
 
-function search(){
-    const search = document.getElementById("search").value;
-    getImages(search);
-}
+
 
 
 function loadImages(photos){
@@ -32,12 +31,12 @@ function loadImages(photos){
         let newImage = `
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-                <a href="${element.url}">
+                <a href="./pexels-details.html?photoId=${element.id}">
                     <img src="${element.src.original}" alt="${element.alt}"class="card-img-top" width="100%" height="225" 
                         preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Searched image" />
                 </a>    
                     <div class="card-body">
-                    <a href="${element.url}">
+                    <a href="./pexels-details.html?photoId=${element.id}">
                         <h5 class="card-title">Lorem Ipsum</h5>
                         <p class="card-text">
                         This is a wider card with supporting text below as a natural
@@ -51,11 +50,12 @@ function loadImages(photos){
                             <button type="button" class="btn btn-sm btn-outline-secondary">
                             View
                             </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary" >
+
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="hideImg(event)">
                             Hide
                             </button>
                         </div>
-                        <small class="text-muted">9 mins</small>
+                        <small class="text-muted">${element.id}</small>
                         </div>
                     </div>
                 
@@ -67,8 +67,39 @@ function loadImages(photos){
 };
 
 
+const hideImg = (event) => {
+    event.target.closest('.col-md-4').remove();
+}
+
+function search(){
+    const query = document.getElementById("research").value;
+    getImages(query);
+}
 
 
+function imageDetailPage(){
+
+    // porta al link "dettagli" 
+    // capisce che id ha la scheda che ho cliccato
+    // prende quell'elemento e usandolo ne polola la pgunt                 
+
+
+
+    let detailsContainer = document.getElementById("detailsContainer");
+    detailsContainer.innerHTML="";
+
+    let newDetail = `
+        <h1 class="jumbotron-heading">Dettaglio immagine</h1>
+        <img src="${photos.src}" alt="${photos.alt}">
+        <p class=>
+        Nome artista: ${photos.photographer}
+        </p>
+        <p class="">
+            Visita pagina artista: ${photos.photographer_url}
+        </p>`;
+
+    detailsContainer.innerHTML = newDetail;
+}
 
 // function hideImg(){
 //     newImage.classList.add("d-none");
