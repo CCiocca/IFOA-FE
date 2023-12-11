@@ -134,7 +134,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"></script>
-    <script src="app.js"></script>
+    <script>
+      function imageDetailPage(id){
+
+        // porta al link "dettagli" 
+        // capisce che id ha la scheda che ho cliccato
+        // prende quell'elemento e usandolo ne polola la pg             
+
+        let detailsContainer = document.getElementById("detailsContainer");
+        detailsContainer.innerHTML="";
+        let photo = photos[]
+        let newDetail = `
+            <h1 class="jumbotron-heading">Dettaglio immagine</h1>
+            <img src="${photos.src}" alt="${photos.alt}">
+            <p class=>
+            Nome artista: ${photos.photographer}
+            </p>
+            <p class="">
+                Visita pagina artista: ${photos.photographer_url}
+            </p>`;
+
+        detailsContainer.innerHTML = newDetail;
+        }
+
+        window.onload = imageDetailPage()
+    </script>
     
 </body>
 </html>

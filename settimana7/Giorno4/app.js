@@ -77,29 +77,29 @@ function search(){
 }
 
 
-function imageDetailPage(){
+// function imageDetailPage(){
 
-    // porta al link "dettagli" 
-    // capisce che id ha la scheda che ho cliccato
-    // prende quell'elemento e usandolo ne polola la pgunt                 
+//     // porta al link "dettagli" 
+//     // capisce che id ha la scheda che ho cliccato
+//     // prende quell'elemento e usandolo ne polola la pgunt                 
 
 
 
-    let detailsContainer = document.getElementById("detailsContainer");
-    detailsContainer.innerHTML="";
+//     let detailsContainer = document.getElementById("detailsContainer");
+//     detailsContainer.innerHTML="";
 
-    let newDetail = `
-        <h1 class="jumbotron-heading">Dettaglio immagine</h1>
-        <img src="${photos.src}" alt="${photos.alt}">
-        <p class=>
-        Nome artista: ${photos.photographer}
-        </p>
-        <p class="">
-            Visita pagina artista: ${photos.photographer_url}
-        </p>`;
+//     let newDetail = `
+//         <h1 class="jumbotron-heading">Dettaglio immagine</h1>
+//         <img src="${photos.src}" alt="${photos.alt}">
+//         <p class=>
+//         Nome artista: ${photos.photographer}
+//         </p>
+//         <p class="">
+//             Visita pagina artista: ${photos.photographer_url}
+//         </p>`;
 
-    detailsContainer.innerHTML = newDetail;
-}
+//     detailsContainer.innerHTML = newDetail;
+// }
 
 // function hideImg(){
 //     newImage.classList.add("d-none");
