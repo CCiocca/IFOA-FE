@@ -18,7 +18,7 @@ const headers = {
 
 const products=[];
 
-const productsToPush = 
+const productsToPush =
     {
         "name": "Samsung Galaxy9",
         "description": "Weird cellphone",
@@ -38,7 +38,7 @@ const postProducts = () => {
         body: JSON.stringify(productsToPush)
     })
     .then(res => res.json())
-    .then(data => 
+    .then(data =>
         console.log(data)
         )
 };
@@ -82,20 +82,20 @@ function populateHomePage(data){
                         <p class="card-text">${element.description}</p>
                         <p class="card-text">${element.brand}</p>
                         <p class="card-text">${element.price} €</p>
-                    
+
                         <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
 
                             <button type="button" class="btn btn-sm btn-outline-primary mx-1" data-bs-target="#productDetails" onclick="showDetailsProduct('${element._id}','show')">Dettagli</button>
 
-                            <button type="button" class="btn btn-sm btn-outline-warning mx-1" data-bs-target="#productDetails" onclick="editDetailsProduct('${element._id}','edit')">Modifica</button>
+                            <button type="button" class="btn btn-sm btn-outline-warning mx-1" data-bs-target="#productDetails" onclick="handleBackOffice('${element._id}','edit')">Modifica</button>
 
-                            <button type="button" class="btn btn-sm btn-outline-danger mx-1" onclick="deleteRecord('${element._id}')">Elimina</button>                                                                                              
+                            <button type="button" class="btn btn-sm btn-outline-danger mx-1" onclick="deleteRecord('${element._id}')">Elimina</button>
                         </div>
                         <small class="text-muted">${element._id}</small>
                         </div>
                     </div>
-                
+
             </div>
           </div>
         `
@@ -114,12 +114,12 @@ getProducts();
 // se ricevi un IdleDeadline, sarai in modalita modifica, senno pagina sarai in modalita salva nuovo prodotto
 
 
-/*
+
 const params = new URLSearchParams(location.search)
 const id = params.get("id")
 
 
-function showDetailsProduct(id){
+function showDetailsProduct(){
     // vai alla pagina del prodotto
 
     window.location.href = "./detail.html?id=" + id;
@@ -134,7 +134,7 @@ function showDetailsProduct(id){
 
 // come apro nuova pagina?
 function populateDetailPage(data){
-    
+
     const containerDetails = document.getElementById("containerDetails");
     containerDetails.innerHTML="";
 
@@ -150,11 +150,11 @@ function populateDetailPage(data){
     containerDetails.innerHTML = newDetails;
 
 };
-*/
 
 
 
-// nel back se entri direttam puoi salvare un nuovo prodotto 
+
+// nel back se entri direttam puoi salvare un nuovo prodotto
 // se entri dalla card, puoi modificare il prodotto
 // bottone elimina nel form per creare sara nascosto
 
@@ -162,7 +162,8 @@ function populateDetailPage(data){
 
 // 4) creare back office con modulo
 
-const sendNewProduct = (action, id) => {
+/*
+function sendNewProduct () {
     const newRecord = {
         "name": document.getElementById('inputName').value,
         "brand": document.getElementById('inputBrand').value,
@@ -171,25 +172,23 @@ const sendNewProduct = (action, id) => {
         "imageUrl": document.getElementById('inputImageUrl').value,
     }
 
-    const finalUrl = action === 'edit' ? url + id : url
-
-    fetch(finalUrl, {
-        method: action === 'edit' ? "PUT" : "POST",
+    fetch(url, {
+        method: "POST",
         headers: headers,
         body: JSON.stringify(newRecord)
     })
     .then((response) => response.json())
-    .then(data => {
-        if (action === 'edit') {
-            products.splice(products.findIndex(element => element._id === id), 1, data)
-            createTable(products)
-        } else {
-            products.push(data)
-            createTable(products)
-        }
-        setAlert(action, 200)
-    })
-    .catch(() => {
-        setAlert(action, 400)
+   .then((data) => {
+        console.log(data);
+        window.location.href = "home.html";
 })
 }
+
+function resetForm(){
+    document.getElementById('inputName').value = "";
+    document.getElementById('inputBrand').value = "";
+    document.getElementById('inputDescription').value = "";
+    document.getElementById('inputPrice').value = "";
+    document.getElementById('inputImageUrl').value = "";
+}
+*/
