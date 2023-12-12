@@ -158,7 +158,7 @@
                     console.log(data);
                     window.location.href = "./home.html";
                 })
-                
+
             }
 
 
@@ -171,41 +171,41 @@
             };
 
 
-            function setAlert(action, responseType) {
-                console.log(action);
-                const alert = document.getElementById('alert')
-                let text = ''
-                let className = ''
+            // function setAlert(action, responseType) {
+            //     console.log(action);
+            //     const alert = document.getElementById('alert')
+            //     let text = ''
+            //     let className = ''
 
-                if (action === 'create' && responseType === 200) {
-                    text = 'Prodotto creato con successo'
-                    className = 'alert-success'
-                }
-                else if (action === 'edit' && responseType === 200) {
-                    text = 'Prodotto modificato con successo'
-                    className = 'alert-success'
-                }
-                else if (action === 'delete' && responseType === 200) {
-                    text = 'Prodotto eliminato con successo'
-                    className = 'alert-success'
-                }
-                else {
-                    text = 'Ops, qualcosa è andato storto'
-                    className = 'alert-danger'
-                }
+            //     if (action === 'create' && responseType === 200) {
+            //         text = 'Prodotto creato con successo'
+            //         className = 'alert-success'
+            //     }
+            //     else if (action === 'edit' && responseType === 200) {
+            //         text = 'Prodotto modificato con successo'
+            //         className = 'alert-success'
+            //     }
+            //     else if (action === 'delete' && responseType === 200) {
+            //         text = 'Prodotto eliminato con successo'
+            //         className = 'alert-success'
+            //     }
+            //     else {
+            //         text = 'Ops, qualcosa è andato storto'
+            //         className = 'alert-danger'
+            //     }
 
-                alert.innerText = text
-                alert.classList.remove('alert-success', 'alert-danger')
-                alert.classList.add(className)
-                alert.style.display = 'block'
-                hideAlert()
-            }
+            //     alert.innerText = text
+            //     alert.classList.remove('alert-success', 'alert-danger')
+            //     alert.classList.add(className)
+            //     alert.style.display = 'block'
+            //     hideAlert()
+            // }
 
-            function hideAlert() {
-                setTimeout(() => {
-                    document.getElementById('alert').style.display = 'none'
-                }, 5000)
-            }
+            // function hideAlert() {
+            //     setTimeout(() => {
+            //         document.getElementById('alert').style.display = 'none'
+            //     }, 5000)
+            // }
             window.onload = handleBackOffice();
 
         </script>
