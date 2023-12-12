@@ -23,7 +23,6 @@
         <hr>
 
         <div id="InsertProductDetails">
-            <h5 id="productDetailsTitle"></h5>
 
                 <form>
                     <div class="mb-3 d-flex">
@@ -52,12 +51,14 @@
                 <div>
                     <img src="" alt="" id="productPhoto" class="object-fit-contain border rounded" width="100%">
                 </div>
+<hr>
 
-
-            <div>
-                <button type="button" class="btn btn-danger" id="buttonDelete" onclick="deleteItem()">Elimina</button>
+            <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-danger" id="buttonDelete" onclick="deleteItem('${element._id}')">Elimina</button>
+                <div>
                 <button type="button" class="btn btn-secondary" onclick="resetForm()" >Reset</button>
-                <button type="button" class="btn btn-primary" onclick="sendNewProduct()">Salva</button>
+                <button type="button" class="btn btn-warning" id="buttonSave" onclick="sendData('${element._id}')">Salva</button>
+                </div>
             </div>
             
         </div>
@@ -88,15 +89,14 @@
                 return response.json()   
             };
             
-            async function handleBackOffice(id, action) {
+            async function handleBackOffice() {
                 //se ci arrivo dal pulsante modifica, devo vedere il pulsante elimina e il titolo diventa edit product
                 
-                if(action === 'edit'){
+                if(id !== null){
 
                     document.getElementById('backOfficeTitle').innerHTML = 'Edit Product';
 
                     const data = await getSingleProduct(id)
-                    document.getElementById('productDetailsTitle').innerText = "Dettagli prodotto " + data.name
                     document.getElementById('inputName').value = data.name
                     document.getElementById('inputPrice').value = data.price
                     document.getElementById('inputDescription').value = data.description
@@ -110,7 +110,6 @@
                     document.getElementById('buttonDelete').style.display = 'none';
                     document.getElementById('backOfficeTitle').innerHTML = 'Add Product';
                     
-                    document.getElementById('productDetailsTitle').innerText = "Crea nuovo prodotto"
                     document.getElementById('inputName').value = ''
                     document.getElementById('inputPrice').value = ''
                     document.getElementById('inputDescription').value = ''
@@ -122,7 +121,7 @@
                 }
             }                       
 
-            function sendNewProduct () {
+            function sendData () {
                 const newRecord = {
                     "name": document.getElementById('inputName').value,
                     "brand": document.getElementById('inputBrand').value,
@@ -130,18 +129,34 @@
                     "price": document.getElementById('inputPrice').value,
                     "imageUrl": document.getElementById('inputImageUrl').value,
                 }
-            
-                fetch(url, {
-                    method: "POST",
+                
+                const finalUrl = id !== null? url + id : url
+
+                fetch(finalUrl, {
+                    method: id !== null ? "PUT" : "POST",
                     headers: headers,
                     body: JSON.stringify(newRecord)
                 })
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data);
-                    window.location.href = "home.html";
+                    window.location.href = "./home.html";
                 })
             };
+
+
+            function deleteItem(){
+                const finalUrl = url + id
+                fetch(finalUrl, {
+                    method: "DELETE",
+                    headers: headers
+                })
+               .then((response) => response.json())
+               .then((data) => {
+                    console.log(data);
+                    window.location.href = "./home.html";
+                })
+            }
 
             function resetForm(){
                 document.getElementById('inputName').value = "";
@@ -150,6 +165,7 @@
                 document.getElementById('inputPrice').value = "";
                 document.getElementById('inputImageUrl').value = "";
             };
+
 
             window.onload = handleBackOffice();
 

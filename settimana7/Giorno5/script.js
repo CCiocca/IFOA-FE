@@ -88,11 +88,9 @@ function populateHomePage(data){
 
                             <button type="button" class="btn btn-sm btn-outline-primary mx-1" data-bs-target="#productDetails" onclick="showDetailsProduct('${element._id}','show')">Dettagli</button>
 
-                            <button type="button" class="btn btn-sm btn-outline-warning mx-1" data-bs-target="#productDetails" onclick="handleBackOffice('${element._id}','edit')">Modifica</button>
+                            <a class="btn btn-sm btn-outline-warning mx-1" data-bs-target="#productDetails" href="./backOffice.html?id=${element._id}">Modifica</a>
 
-                            <button type="button" class="btn btn-sm btn-outline-danger mx-1" onclick="deleteRecord('${element._id}')">Elimina</button>
                         </div>
-                        <small class="text-muted">${element._id}</small>
                         </div>
                     </div>
 
@@ -150,6 +148,7 @@ function populateDetailPage(data){
     containerDetails.innerHTML = newDetails;
 
 };
+
 
 
 
