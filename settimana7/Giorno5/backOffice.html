@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav class="bg-dark d-flex justify-content-between align-items-center px-5">
+            <div>
+                <img src="./logoAmazon.png" alt="logo" width="100px">
+            </div>
+            <div>
+                <a href="./home.html">Home Page</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="p-5">
+        <h1 class="text-center">Add Product</h1>
+        <hr>
+
+        <div id="InsertProductDetails">
+            <h5 id="productDetailsTitle"></h5>
+
+                <form>
+                    <div class="mb-3 d-flex">
+                        <div class="col mx-1">
+                            <label for="inputName" class="form-label">Modello</label>
+                            <input type="text" class="form-control" id="inputName">
+                        </div>
+                        <div class="col mx-1">
+                            <label for="inputPrice" class="form-label">Prezzo</label>
+                            <input type="number" min="0" class="form-control" id="inputPrice">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputBrand" class="form-label">Brand</label>
+                        <input type="text" class="form-control" id="inputBrand">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputDescription" class="form-label">Descrizione</label>
+                        <input type="text" class="form-control" id="inputDescription">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputImageUrl" class="form-label">URL Foto prodotto</label>
+                        <input type="text" class="form-control" id="inputImageUrl">
+                    </div>
+                </form>
+                <div>
+                    <img src="" alt="" id="productPhoto" class="object-fit-contain border rounded" width="100%">
+                </div>
+
+
+            <div>
+                <button type="button" class="btn btn-secondary" >Chiudi</button>
+                <button type="button" class="btn btn-primary" id="buttonSave" onclick="sendData()">Salva</button>
+            </div>
+            
+        </div>
