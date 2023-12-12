@@ -13,13 +13,15 @@
                 <img src="./logoAmazon.png" alt="logo" width="100px">
             </div>
             <div>
+                <a href="./home.html">Home Page</a>
                 <a href="./backOffice.html">Back office</a>
             </div>
         </nav>
     </header>
 
     <main class="p-5">
-        <div id="containerDetails">
+        <h1>Dettagli prodotto</h1>
+        <div id="containerDetails" class="d-flex">
             <!-- <img src="" alt="" id="productPhoto" class="object-fit-contain border rounded" width="100%">
             <div>
                 <h5 id="productDetailsTitle">Nome prodotto: <span id="detailTitle"></span></h5>
@@ -43,7 +45,39 @@
                 "Content-Type": "application/json"
             } 
 
-            
+            const params = new URLSearchParams(location.search)
+            const id = params.get("id")
+
+
+            const showDetailsProduct = () =>{
+                console.log(id);
+                fetch(url + id, {
+                    headers: headers,
+                })
+            .then(res => res.json())
+            .then(data => populateDetailPage(data))
+            };
+
+
+            function populateDetailPage(data){
+
+                const containerDetails = document.getElementById("containerDetails");
+                containerDetails.innerHTML="";
+
+                let newDetails = `
+                <img src="${data.imageUrl}" alt="" height="300px">
+                        <div class=p-5>
+                            <h5>Nome prodotto: ${data.name}</h5>
+                            <p>Descrizione: ${data.description}</p>
+                            <p>Brand: ${data.brand}</p>
+                            <p>Prezzo: ${data.price}€</p>
+                        </div>`
+
+                containerDetails.innerHTML = newDetails;
+
+            };
+
+            window.onload = showDetailsProduct()
     </script>
 
     </body>

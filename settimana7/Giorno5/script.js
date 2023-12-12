@@ -86,7 +86,7 @@ function populateHomePage(data){
                         <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
 
-                            <button type="button" class="btn btn-sm btn-outline-primary mx-1" data-bs-target="#productDetails" onclick="showDetailsProduct('${element._id}','show')">Dettagli</button>
+                            <a class="btn btn-sm btn-outline-primary mx-1" data-bs-target="#productDetails" href="./detail.html?id=${element._id}">Dettagli</a>
 
                             <a class="btn btn-sm btn-outline-warning mx-1" data-bs-target="#productDetails" href="./backOffice.html?id=${element._id}">Modifica</a>
 
@@ -112,7 +112,7 @@ getProducts();
 // se ricevi un IdleDeadline, sarai in modalita modifica, senno pagina sarai in modalita salva nuovo prodotto
 
 
-
+/*
 const params = new URLSearchParams(location.search)
 const id = params.get("id")
 
@@ -148,6 +148,7 @@ function populateDetailPage(data){
     containerDetails.innerHTML = newDetails;
 
 };
+*/
 
 
 
