@@ -10,7 +10,7 @@ import AccountDropdown from '../atoms/AccountDropdown.jsx'
 function CustomNavbar() {
   return (
     <>
-    <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme="dark" >
+    <Navbar expand="lg" data-bs-theme="dark">
       <Container fluid>
         <Navbar.Brand href="https://www.netflix.com/it/">
             <img src="../src/assets/netflix_logo.png" alt="NetflixLogo" width="100" className="d-inline-block align-top"/></Navbar.Brand>
