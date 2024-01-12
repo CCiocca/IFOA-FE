@@ -17,8 +17,7 @@ const CustomGallery = ({url}) => {
       <Row className="g-1 d-flex flex-nowrap overflow-x-visible mx-3">
           {movies.map((movie)=>(
             <Col key={movie.imdbID}>
-                <img src={movie.Poster} alt={movie.Title} height={200} className='movieImg'
-                onmouseover={bigImg()} onmouseout={normalImg()}/>      
+                <img src={movie.Poster} alt={movie.Title} className='imgZoom' />      
             </Col>
             ))}
        </Row>

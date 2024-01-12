@@ -31,7 +31,13 @@ function CustomNavbar() {
           </Nav>
 
           <Nav>
-            <Dropdown.Toggle variant='transparent' id="dropdown-basic" className='no-border'>
+            <Nav.Link href="#action0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+              </svg>
+            </Nav.Link>
+
+            {/* <Dropdown.Toggle variant='transparent' id="dropdown-basic" className='no-border'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                   </svg>
@@ -53,7 +59,7 @@ function CustomNavbar() {
                 </Button>
               </Form>
               </Dropdown.Item>
-            </Dropdown.Menu>
+            </Dropdown.Menu> */}
 
             <Nav.Link href="#action1">KIDS</Nav.Link>
             <Nav.Link href="#action2">
