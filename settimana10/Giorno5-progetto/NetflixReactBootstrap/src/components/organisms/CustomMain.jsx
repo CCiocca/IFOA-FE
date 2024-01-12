@@ -17,7 +17,7 @@ const CustomMain = () => {
         </div>
 
         <div className="section1 p-5">
-        <h4>Sciubidubi</h4>
+        <h4>Shrek</h4>
         <CustomGallery url="http://www.omdbapi.com/?apikey=86c5c8d1&s=shrek"/>
         </div>
         
