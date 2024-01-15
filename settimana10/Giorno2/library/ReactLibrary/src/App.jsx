@@ -1,26 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import {Container, Row} from 'react-bootstrap';
 import NavBarComponent from './components/NavBarComponent';
-import JumbotronComponent from './components/JumbotronComponent';
-import AllTheBooksComponent from './components/AllTheBooksComponent';
+import Main from './components/Main';
 import FooterComponent from './components/FooterComponent';
 
 
 function App() {
 
+  const [title, setTitle] = useState('Libreria del Centro')
+  useEffect(() =>{
+    document.title = title
+  },[title])
+
   return (
     <>
       <NavBarComponent/>
-      <Container>
-        <Row>
-          <JumbotronComponent/>
-        </Row>
-        <Row>
-          <AllTheBooksComponent/>
-        </Row>
-      </Container>
+      <Main setPageTitle={setTitle}/>
       <FooterComponent />
     </>
   )
