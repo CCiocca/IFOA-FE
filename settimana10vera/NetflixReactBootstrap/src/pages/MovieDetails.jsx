@@ -4,7 +4,7 @@ import CustomMovies from "../components/organisms/CustomMovies"
 const MovieDetails = ({page}) => {
     return(
         <>
-      <CustomMovies page={page}/>
+      {/* <CustomMovies page={page}/> */}
       </>
 )
 }
