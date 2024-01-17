@@ -14,6 +14,9 @@ const SearchPage = ({page}) => {
               type="text"
               placeholder="Search"
               className=" mr-sm-2"
+
+              name="search"
+              value={}
             />
           </Col>
           <Col xs="auto">
