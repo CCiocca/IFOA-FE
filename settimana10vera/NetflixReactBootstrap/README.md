@@ -1,3 +1,12 @@
+Non riesco a far apparire l'alert se faccio ricerca con meno di 2 parametri
+Pagina MovieDetails
+
+Fare call diverse per home, tv shows, movies
+
+Sistemare pag Account 
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

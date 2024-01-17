@@ -1,17 +1,21 @@
 import { Container } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
 const NotFoundMessage = () => {
     const navigate = useNavigate();
 
-    let counter= 10
+    const [count, setCount] = useState(10);
 
-    // setInterval(()=>{
-    //     counter = counter--}, 1000)      
-    // }
+    useEffect(() => {
+      const timer = setInterval(() => setCount((oldCount) => oldCount - 1), 1000);
+  
+      return () => {
+        clearInterval(timer);
+      };
+    }, []);
 
 
     useEffect(() => {
@@ -23,9 +27,9 @@ const NotFoundMessage = () => {
 
     return(
         <>
-        <Container className="d-flex justify-content-center my-5" >
+        <Container className="d-flex flex-column justify-content-center my-5" >
         <h1>Sorry, page not found!</h1>
-        <p>You will be redirected to the homepage in {counter} seconds or <Link to="/">click here </Link></p>
+        <p>You will be redirected to the homepage in {count} seconds or <Link to="/">click here </Link></p>
         </Container>
         </>
 )

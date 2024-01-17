@@ -22,7 +22,7 @@ const CustomCarousel = ({url}) => {
       
         <Carousel.Item>
           {movies.map((movie)=>(
-          <img key={movie.imdbID} src={movie.Poster} alt={movie.Title} width={120} className='imgHover'/>      ))}
+          <img key={movie.imdbID} src={movie.Poster} alt={movie.Title} width={120}/>      ))}
         </Carousel.Item>
 
        </div>

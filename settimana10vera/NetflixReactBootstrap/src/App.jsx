@@ -10,6 +10,7 @@ import Account from './pages/Account'
 import NotFound from './pages/NotFound'
 import MovieDetails from './pages/MovieDetails'
 import SearchPage from './pages/SearchPage'
+import SearchResults from './pages/SearchResults'
 
 
 
@@ -25,6 +26,8 @@ function App() {
       <Route path="/account" element={<Account page="Account"/>}/>
       <Route path="/movie-details" element={<MovieDetails page="Movie Details"/>}/>
       <Route path="/search-page" element={<SearchPage page="Search"/>}/>
+      <Route path="/search-results" element={<SearchResults page="Search"/>}/>
+
       <Route path="*" element={<NotFound/>}/>
     </Routes>
   

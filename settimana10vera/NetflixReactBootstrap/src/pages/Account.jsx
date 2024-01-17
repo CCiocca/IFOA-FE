@@ -1,7 +1,9 @@
+import CustomPageTitleSection from "../components/molecules/CustomPageTitleSection"
+
 const Account = ({page}) => {
     return(
         <>
-        <h1>{page}</h1>
+        <CustomPageTitleSection page={page}/>
         </>
 )
 }
