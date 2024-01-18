@@ -1,9 +1,29 @@
 import { Row, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { ADD_FAVOURITE, REMOVE_FAVOURITE, addFavourite, removeFavourite } from '../actions/favouritesAction'
+
 
 const Job = ({ data }) => {
   
-  const favourites = useSelector(state => state.favourites)
+  const dispatch = useDispatch()
+  const favourites = useSelector (state => state.favourites)
+  
+  const navigate = useNavigate()
+  
+
+  const handleFavourites = (buba) => {
+    switch (buba) {
+      case ADD_FAVOURITE:
+        dispatch(addFavourite())
+        break;
+      case REMOVE_FAVOURITE
+        dispatch(removeFavourite())
+        break;
+    }
+     
+  }
+
 
   return (
     <>
@@ -20,11 +40,12 @@ const Job = ({ data }) => {
       </a>
     </Col>
     <Col xs={2}>
-      <span>Add to favourites</span>
+      <a onClick={() =>dispatch(addFavourite(data.company_name)) }>Add to favourites</a>
       {/* <i className="bi bi-heart dark"></i> */}
     </Col>
   </Row>
   </>
 )
+}
 
-export default Job}
+export default Job
