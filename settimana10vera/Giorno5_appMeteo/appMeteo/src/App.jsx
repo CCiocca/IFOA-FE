@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 import './App.css'
-import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import CustomHeader from './components/organisms/CustomHeader'
 import CustomFooter from './components/organisms/CustomFooter'
@@ -16,7 +15,6 @@ function App() {
 
   return (
     <>
-      <Provider>
         <BrowserRouter>
           <CustomHeader/>
             <Routes>
@@ -29,7 +27,6 @@ function App() {
             </Routes>
           <CustomFooter/>
         </BrowserRouter>
-      </Provider>
     </>
   )
 }
