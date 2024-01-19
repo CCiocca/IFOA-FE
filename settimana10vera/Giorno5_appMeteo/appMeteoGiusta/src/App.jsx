@@ -9,14 +9,12 @@ import WeatherMain from './components/organisms/WeatherMain'
 import ForecastMain from './components/organisms/ForecastMain'
 import NotFound from './components/organisms/NotFound'
 import HomeMain from './components/organisms/HomeMain'
-import { Provider } from 'react-redux';
 
 
 function App() {
 
   return (
     <>
-      <Provider>
         <BrowserRouter>
           {/* <CustomHeader/> */}
             <Routes>
@@ -29,7 +27,6 @@ function App() {
             </Routes>
           {/* <CustomFooter/> */}
         </BrowserRouter>
-        </Provider>
     </>
   )
 }

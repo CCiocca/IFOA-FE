@@ -69,5 +69,19 @@ body{
   place-items: center;
 }
 
+.bold{
+  font-weight: 800;
+}
 
+.big{
+  font-size: 4rem;
+}
 
+.cardsBackground{
+  background-color: rgb(19, 19, 103);
+  opacity: 0.7
+}
+
+.rem08{
+  font-size: 0.8rem;
+}

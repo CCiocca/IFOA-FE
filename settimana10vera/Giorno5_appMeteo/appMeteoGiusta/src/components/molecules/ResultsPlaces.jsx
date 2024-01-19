@@ -1,7 +1,6 @@
 import { Row, Col, Button } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from "react"
-import { useDispatch } from 'react-redux'
 
 
 
@@ -12,8 +11,6 @@ const ResultsPlaces = ({place}) => {
 
     // const [latitude, setLatitude] = useState('')
     // const [longitude, setLongitude] = useState('')
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
 
 
     // const handleClick = (e) => {
@@ -27,8 +24,7 @@ const ResultsPlaces = ({place}) => {
     // }
 
     const handleClick = () => {
-        dispatch(place)
-        navigate('/data/2.5/weather')
+
     }
 
    
@@ -40,7 +36,7 @@ const ResultsPlaces = ({place}) => {
         <Row
             className="mx-auto mt-3 p-0"            
         >
-                    <Col> <p>{place.name}</p></Col>
+                    <Col> <p>{place.list[0].main.temp}</p></Col>
                     <Col> <p>{place.state}</p></Col>
                     <Col> <p>{place.country}</p></Col>
         </Row>

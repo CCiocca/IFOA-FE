@@ -49,28 +49,28 @@ const HomeMain = () => {
     return(
         <>
         <Container>
-            <Row>
+            <Row className="d-flex flex-column"> 
                 <Col className="mx-auto my-3">
-                    <h1 className="display-1">Weather</h1>
+                    <h1>MoodieWeather</h1>
                 </Col>
-                <Col className="mx-auto my-3">
+                {/* <Col className="mx-auto my-3">
                     <Link to="/favourites">Favourites</Link>
-                </Col>
+                </Col> */}
             
-                <Col className="mx-auto">
+                <Col className="mx-auto mb-5">
 
-                    <Form>
-                        <Row >
-                            <Col xs="auto">
+                    <Form className="mx-auto">
+                        <Row className="display-flex justify-content-between">
+                            <Col className="col-8">
                                 <Form.Control
                                 type="text"
                                 placeholder="Search a city"
-                                className=" mr-sm-2 p-5 danger"
+                               
                                 value={query} 
                                 onChange={handleChange}
                                 />
                             </Col>
-                            <Col xs="auto">
+                            <Col>
                                 <Button type="button" onClick={() => fetchData()}>Search</Button>
                             </Col>
                             </Row>
@@ -83,10 +83,11 @@ const HomeMain = () => {
                     <Button onClick={() => setResults(FetchData(url))}>Search</Button>
                 </Col> */}
                 
-                <Col className="mx-auto mb-5 b text-bg-info p-3">
+                
+                <Col>
                     {results?.length > 0 &&
                     results.map((place, index) => (
-                    <ResultsPlaces key={index} place={place} lat={place.lat} lon={place.lon}/>
+                    <ResultsPlaces key={index} place={place}/>
                 ))}
                 </Col>
             </Row>

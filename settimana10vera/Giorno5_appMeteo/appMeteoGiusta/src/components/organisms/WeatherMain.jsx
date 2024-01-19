@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import { useSelector } from "react-redux"
 
 
 const WeatherMain = () => {
 
-    const place = useSelector((state) => state.place)
     // const [results, setResults] = useState([])
 
     // const [lat, setLat] = useState('')
