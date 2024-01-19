@@ -81,56 +81,58 @@ const HomeMain = () => {
 
                         <Col className="col-6"> <p className="display-3">{results.list[0]?.weather[0]?.main}</p></Col>
 
-                        <Col className="d-flex flex-wrap gap-2 justify-content-between p-0">
-                            <div className="rounded cardsBackground d-flex p-2 align-items-center my-2">
-                                <Col className="col-2" >
-                                    <i class="fa-solid fa-wind fs-3"></i>
-                                </Col>
-                                <Col className="col-8">
-                                    <p className="m-0 rem08">wind speed</p>
-                                    <p className="m-0">{results.list[0]?.weather[0]?.wind.speed} km/h</p>
-                                </Col>
-                            </div>
+                        <Col className="d-flex flex-wrap justify-content-between p-0 gap-1">
+                           
+                            <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " style={{ minWidth: '10rem' }}>
 
-                            <div className="rounded cardsBackground d-flex p-2 align-items-center my-2">
-                                <Col className="col-2" >
-                                    <i class="fa-solid fa-wind fs-3"></i>
-                                </Col>
-                                <Col className="col-8">
-                                    <p className="m-0 rem08">wind speed</p>
-                                    <p className="m-0">{results.list[0]?.weather[0]?.wind.speed} km/h</p>
-                                </Col>
-                            </div>
+                                    <Col className="col-2" >
+                                        <i class="fa-solid fa-wind fs-3"></i>
+                                    </Col>
+                                    <Col className="col-8">
+                                        <p className="m-0 rem08">Wind speed</p>
+                                        <p className="m-0">{results.list[0]?.wind.speed} km/h</p>
+                                    </Col> 
+                            </Col>
 
-                            <div className="rounded cardsBackground d-flex p-2 align-items-center my-2">
-                                <Col className="col-2" >
-                                    <i class="fa-solid fa-wind fs-3"></i>
-                                </Col>
-                                <Col className="col-8">
-                                    <p className="m-0 rem08">wind speed</p>
-                                    <p className="m-0">{results.list[0]?.weather[0]?.wind.speed} km/h</p>
-                                </Col>
-                            </div>
+                            <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " style={{ minWidth: '10rem' }}>
 
-                            <div className="rounded cardsBackground d-flex p-2 align-items-center my-2">
-                                <Col className="col-2" >
-                                    <i class="fa-solid fa-wind fs-3"></i>
-                                </Col>
-                                <Col className="col-8">
-                                    <p className="m-0 rem08">wind speed</p>
-                                    <p className="m-0">{results.list[0]?.weather[0]?.wind.speed} km/h</p>
-                                </Col>
-                            </div>
+                                    <Col className="col-2" >
+                                        <i class="fa-solid fa-temperature-three-quarters fs-3"></i>
+                                    </Col>
+                                    <Col className="col-8">
+                                        <p className="m-0 rem08">Temperature</p>
+                                        <p className="m-0">{results.list[0]?.main.temp} °C</p>
+                                    </Col> 
+                            </Col>
+                         
 
-                            <div className="rounded cardsBackground d-flex p-2 align-items-center my-2">
-                                <Col className="col-2" >
-                                    <i class="fa-solid fa-wind fs-3"></i>
-                                </Col>
-                                <Col className="col-8">
-                                    <p className="m-0 rem08">wind speed</p>
-                                    <p className="m-0">{results.list[0]?.weather[0]?.wind.speed} km/h</p>
-                                </Col>
-                            </div>
+                          
+                            <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " style={{ minWidth: '10rem' }}>
+
+                                    <Col className="col-2" >
+                                        <i class="fa-solid fa-cloud-rain fs-3"></i>
+                                    </Col>
+                                    <Col className="col-8">
+                                        <p className="m-0 rem08">Rain chance</p>
+                                        <p className="m-0">{results.list[0]?.clouds.all} %</p>
+                                    </Col> 
+                            </Col>
+
+                            <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " style={{ minWidth: '10rem' }}>
+
+                                    <Col className="col-2" >
+                                        <i class="fa-solid fa-percent fs-3"></i>
+                                    </Col>
+                                    <Col className="col-8">
+                                        <p className="m-0 rem08">Humidity</p>
+                                        <p className="m-0">{results.list[0]?.main.humidity} %</p>
+                                    </Col> 
+                            </Col>
+                        
+
+                            
+
+                            
 
                             
                         </Col>
