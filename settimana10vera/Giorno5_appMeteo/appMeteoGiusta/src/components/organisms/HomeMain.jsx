@@ -48,7 +48,7 @@ const HomeMain = () => {
 
     const fetchData = () => {
         fetchDataWeather()
-        fetchDataForecast()
+        // fetchDataForecast()
         }
 
 
@@ -188,7 +188,7 @@ const HomeMain = () => {
 
 
 {/* forecasts beginning */}
-                <h5>Forecasts</h5>
+                {/* <h5>Forecasts</h5>
 
                         <Col className="d-flex flex-wrap justify-content-between p-0 gap-1">
                            
@@ -238,7 +238,7 @@ const HomeMain = () => {
                                     </Col> 
                             </Col>
                                                     
-                        </Col>
+                        </Col> */}
  {/* forecasts end */}
                         
             </Row>
