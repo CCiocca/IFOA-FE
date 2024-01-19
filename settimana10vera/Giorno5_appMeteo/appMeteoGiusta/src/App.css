@@ -79,7 +79,9 @@ body{
 
 .cardsBackground{
   background-color: rgb(19, 19, 103);
-  opacity: 0.7
+  opacity: 0.7;
+  min-width: 10rem;
+  max-width: 20rem;
 }
 
 .rem08{

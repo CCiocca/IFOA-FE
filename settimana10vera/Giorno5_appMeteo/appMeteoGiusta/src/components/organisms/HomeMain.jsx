@@ -7,34 +7,80 @@ import ResultsPlaces from "../molecules/ResultsPlaces"
 
 const HomeMain = () => {
     const [query, setQuery] = useState('')
-    const [results, setResults] = useState(
+    const [resultsWeather, setResultsWeather] = useState(
         {
-            cod: "200",
-            message: 0,
-            cnt: 40,
-            list: []
-        },
+            coord: {},
+            weather:[],
+            base: "",
+            main: {},
+            visibility: 0,
+            wind:{},
+            clouds: {},
+            dt: 0,
+            sys: {},
+            timezone: 0,
+            id: 0,
+            name: "",
+            cod: 0
+
+        }
     )
+    const [resultsForecast, setResultsForecast] = useState([
+        {
+            cod: "",
+            message: 0,
+            cnt: 0,
+            list: [],
+            city:{}
+        },
+    ])
 
     const APIkey = '36c6ba5e6cbbd2a3c701bf362b4629b9'
 
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=${APIkey}&units=metric`
+    const urlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${APIkey}&units=metric`
+
+    const urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=${APIkey}&units=metric`
+
 
     const handleChange = (e) => {
         setQuery(e.target.value)
     }
 
-    const fetchData = async () => {
+    const fetchData = () => {
+        fetchDataWeather()
+        fetchDataForecast()
+        }
+
+
+    const fetchDataWeather = async () => {
         try {
-            console.log(url)
-            const res = await fetch(url);
+            console.log(urlWeather)
+            const res = await fetch(urlWeather);
             if (res.ok) {
                 const data = await res.json();
                 console.log(data);
-                setResults(data)
+                setResultsWeather(data)
                 
             } else {
-                alert('No results')
+                alert('No results weather')
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+    const fetchDataForecast = async () => {
+        try {
+            console.log(urlForecast)
+            const res = await fetch(urlForecast);
+            if (res.ok) {
+                const data = await res.json();
+                console.log(data);
+                setResultsForecast(data)
+                
+            } else {
+                alert('No results forecast')
             }
         }
         catch (err) {
@@ -76,12 +122,15 @@ const HomeMain = () => {
                                         
 
             <Row className="mx-auto mt-3 p-0">
-                <h2 className="bold big">{results.city?.name}</h2>
-                        <Col className="col-6"> <p className="display-3">{results.list[0]?.main.temp} °C</p></Col>
+                <h2 className="bold big">{resultsWeather.name}</h2>
+                        <Col className="col-6"> <p className="display-3">{resultsWeather.main?.temp} °C</p></Col>
 
-                        <Col className="col-6"> <p className="display-3">{results.list[0]?.weather[0]?.main}</p></Col>
+                        <Col className="col-6"> <p className="display-3">{resultsWeather.weather[0]?.main}</p></Col>
 
-                        <Col className="d-flex flex-wrap justify-content-between p-0 gap-1">
+{/* weather beginning */}
+
+                <h5>Today</h5>
+                <Col className="d-flex flex-wrap justify-content-between p-0 gap-1">
                            
                             <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " style={{ minWidth: '10rem' }}>
 
@@ -90,7 +139,7 @@ const HomeMain = () => {
                                     </Col>
                                     <Col className="col-8">
                                         <p className="m-0 rem08">Wind speed</p>
-                                        <p className="m-0">{results.list[0]?.wind.speed} km/h</p>
+                                        <p className="m-0">{resultsWeather.wind?.speed} km/h</p>
                                     </Col> 
                             </Col>
 
@@ -101,7 +150,7 @@ const HomeMain = () => {
                                     </Col>
                                     <Col className="col-8">
                                         <p className="m-0 rem08">Temperature</p>
-                                        <p className="m-0">{results.list[0]?.main.temp} °C</p>
+                                        <p className="m-0">{resultsWeather.main?.temp} °C</p>
                                     </Col> 
                             </Col>
                          
@@ -114,7 +163,7 @@ const HomeMain = () => {
                                     </Col>
                                     <Col className="col-8">
                                         <p className="m-0 rem08">Rain chance</p>
-                                        <p className="m-0">{results.list[0]?.clouds.all} %</p>
+                                        <p className="m-0">{resultsWeather.clouds.all} %</p>
                                     </Col> 
                             </Col>
 
@@ -125,17 +174,72 @@ const HomeMain = () => {
                                     </Col>
                                     <Col className="col-8">
                                         <p className="m-0 rem08">Humidity</p>
-                                        <p className="m-0">{results.list[0]?.main.humidity} %</p>
+                                        <p className="m-0">{resultsWeather.main.humidity} %</p>
                                     </Col> 
                             </Col>
-                        
-
-                            
-
-                            
-
-                            
+                                                    
                         </Col>
+
+{/* weather end */}
+
+
+
+
+
+
+{/* forecasts beginning */}
+                <h5>Forecasts</h5>
+
+                        <Col className="d-flex flex-wrap justify-content-between p-0 gap-1">
+                           
+                            <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " style={{ minWidth: '10rem' }}>
+
+                                    <Col className="col-2" >
+                                        <i class="fa-solid fa-wind fs-3"></i>
+                                    </Col>
+                                    <Col className="col-8">
+                                        <p className="m-0 rem08">Wind speed</p>
+                                        <p className="m-0">{resultsForecast.list[0]?.wind.speed} km/h</p>
+                                    </Col> 
+                            </Col>
+
+                            <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " style={{ minWidth: '10rem' }}>
+
+                                    <Col className="col-2" >
+                                        <i class="fa-solid fa-temperature-three-quarters fs-3"></i>
+                                    </Col>
+                                    <Col className="col-8">
+                                        <p className="m-0 rem08">Temperature</p>
+                                        <p className="m-0">{resultsForecast.list[0]?.main.temp} °C</p>
+                                    </Col> 
+                            </Col>
+                         
+
+                          
+                            <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " style={{ minWidth: '10rem' }}>
+
+                                    <Col className="col-2" >
+                                        <i class="fa-solid fa-cloud-rain fs-3"></i>
+                                    </Col>
+                                    <Col className="col-8">
+                                        <p className="m-0 rem08">Rain chance</p>
+                                        <p className="m-0">{resultsForecast.list[0]?.clouds.all} %</p>
+                                    </Col> 
+                            </Col>
+
+                            <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " style={{ minWidth: '10rem' }}>
+
+                                    <Col className="col-2" >
+                                        <i class="fa-solid fa-percent fs-3"></i>
+                                    </Col>
+                                    <Col className="col-8">
+                                        <p className="m-0 rem08">Humidity</p>
+                                        <p className="m-0">{resultsForecast.list[0]?.main.humidity} %</p>
+                                    </Col> 
+                            </Col>
+                                                    
+                        </Col>
+ {/* forecasts end */}
                         
             </Row>
 
