@@ -1,5 +1,6 @@
-import { Col } from "react-bootstrap"
+import { Col, Row } from "react-bootstrap"
 import { useSelector } from "react-redux"
+import ForecastChart from "./ForecastChart"
 
 
 const ForecastMain = () => {
@@ -13,11 +14,15 @@ const ForecastMain = () => {
 
     {resultsForecast.list && resultsForecast.list.length > 0 &&
     <>
-    <Col className="d-flex flex-wrap justify-content-center p-0 gap-2 ">
+    <Row>
+    <Col className="p-0 col-lg-8"> 
+        <ForecastChart/>
+    </Col>   
+    <Col className="d-flex flex-wrap justify-content-center p-0 gap-2 col-lg-4  flex-md-column">
 
         {resultsForecast.list.map((hour) => {
             return(
-            <Col key={hour.dt} className="rounded cardsBackground d-flex p-2 align-items-center my-2 col-12" >
+            <Col key={hour.dt} className="rounded cardsBackground cardsForecast d-flex p-2 align-items-center my-2 col-12" >
 
                 <Col className="col-3" >
                     <p>{hour.dt_txt}</p>
@@ -47,8 +52,9 @@ const ForecastMain = () => {
             </Col>
             
         )}
-            )}                                            
+            )}                                    
     </Col>
+    </Row>     
     </>
     }
     </>

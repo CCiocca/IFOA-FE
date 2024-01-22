@@ -5,6 +5,7 @@ import { setResultsForecast } from "../../redux/forecastSlice";
 import WeatherMain from "./WeatherMain";
 import { useEffect, useState } from "react";
 import ForecastMain from "./ForecastMain";
+import ForecastChart from "./ForecastChart";
 
 
 const HomeMain = () => {
@@ -107,7 +108,8 @@ const HomeMain = () => {
                         <Col className="col-6"> <p className="display-3">{resultsWeather.weather[0]?.main}</p></Col>
 
                 <WeatherMain/>
-                <ForecastMain />                      
+                <ForecastMain />   
+                                  
             </Row>
         </>
         }

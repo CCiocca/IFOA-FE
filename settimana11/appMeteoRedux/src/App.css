@@ -84,6 +84,10 @@ body{
   max-width: 20rem;
 }
 
+.cardsForecast{
+  min-width: 20rem;
+}
+
 /* mediaquery */
 
 .rem08{
@@ -98,3 +102,15 @@ body{
   margin: 0 auto !important
 }
 
+.responsiveGraphWrap{
+  width: 100%;
+  height: 400px; /* Altezza predefinita per schermi di dimensioni maggiori */
+  
+  @media (max-width: 767px) {
+    height: 300px; /* Altezza per schermi più piccoli (max-width: 767px) */
+  }
+}
+
+.whiteText {
+  color: white;
+}
