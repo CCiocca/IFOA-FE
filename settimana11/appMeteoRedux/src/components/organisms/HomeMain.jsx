@@ -37,6 +37,7 @@ const HomeMain = () => {
     const fetchDataWeather = async () => {
         try {
             const res = await fetch(urlWeather);
+            console.log(urlWeather);
             if (res.ok) {
                 const data = await res.json();
                 dispatch(setResultsWeather(data))                
@@ -67,12 +68,6 @@ const HomeMain = () => {
             console.log(err)
         }
     }
-
-
-    useEffect(() => {
-        console.log(resultsForecast, "io sono lo store forecast");
-    }, [resultsForecast]);
-
 
 
     return(

@@ -29,7 +29,7 @@ const WeatherMain = () => {
                     </Col>
                     <Col className="col-8">
                         <p className="m-0 rem08">Temperature</p>
-                        <p className="m-0">{resultsWeather.main?.temp.toFixed()} °C</p>
+                        <p className="m-0">{resultsWeather.main?.temp_min.toFixed()} / {resultsWeather.main?.temp_max.toFixed()} °C</p>
                     </Col> 
             </Col>
             
