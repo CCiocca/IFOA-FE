@@ -90,6 +90,11 @@ body{
   font-size: 0.8rem;
 }
 
+.rem2{
+  font-size: 2rem;
+}
+
 .center{
   margin: 0 auto !important
 }
+

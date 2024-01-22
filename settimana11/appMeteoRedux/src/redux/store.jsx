@@ -3,11 +3,11 @@ import { forecastReducer } from "./forecastSlice";
 import { weatherReducer } from "./weatherSlice";
 
 
-configureStore ({
+const store =  configureStore ({
     reducer:{
         weather: weatherReducer, 
-        forecasts: forecastReducer,
+        forecast: forecastReducer,
     }
-})
+});
 
-export default configureStore
+export default store

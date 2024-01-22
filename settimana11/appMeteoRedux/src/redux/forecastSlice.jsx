@@ -11,12 +11,12 @@ export const forecastSlice = createSlice({
         city:{}
     },
     reducers: {
-        setResultsForecast: (state, action) => {
-            state = action.payload
+        setResultsForecast: (state, action) =>{
+            return { ...state, ...action.payload }
         },
     },
 })
 
-export const {setResultsForecast} = forecastSlice.actions
+export const { setResultsForecast } = forecastSlice.actions;
 
 export const forecastReducer = forecastSlice.reducer

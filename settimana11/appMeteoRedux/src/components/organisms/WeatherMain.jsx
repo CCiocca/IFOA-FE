@@ -1,131 +1,66 @@
-import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { useSelector } from "react-redux"
+import { Col } from "react-bootstrap";
+
 
 
 const WeatherMain = () => {
-
-    // const [results, setResults] = useState([])
-
-    // const [lat, setLat] = useState('')
-    // const [lon, setLon] = useState('')
-
-
-    // const APIkey = '36c6ba5e6cbbd2a3c701bf362b4629b9'
-    // const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}`
-
-    // const fetchData = async () => {
-    //     try {
-    //         console.log(url)
-    //         const res = await fetch(url);
-    //         if (res.ok) {
-    //             const data = await res.json();
-    //             console.log(data);
-    //             setResults(data)
-                
-    //         } else {
-    //             alert('No results')
-    //         }
-    //     }
-    //     catch (err) {
-    //         console.log(err)
-    //     }
-    // }
-
-    // useEffect(()=> {
-    //     setLat(place.lat);
-    //     setLon(place.lon);
-    //     console.log(lat);
-    //     fetchData();
-    // }, [])
-
+    const resultsWeather = useSelector((state)=>state.weather) 
 
     return(
         <>
-        <Container className="container">
-            <div>
-                <h2 className="display-1">City</h2>
-            </div>
-            <div>
-                <h3>place.weather.main</h3>
-            </div>
-            <div>
-                <h4>place.weather.description</h4>
-            </div>
-            <div>
-                <h3>place.main.temp °C</h3>
-            </div>
-            <div>
-                <p>Perceived temperature place.main.feels_like °C</p>
-            </div>
-            <div>
-                <p>Min place.main.temp_min °C</p>
-            </div>
-            <div>
-                <p>Max place.main.temp_max °C</p>
-            </div>
-            <div>
-                <p>Pressure place.main.pressure bar</p>
-            </div>
-            <div>
-                <p>Humidity place.main.humidity %</p>
-            </div>
-            <div>
-                <p>Wind speed place.wind.speed km/h</p>
-            </div>
-            <div>
-                <p>Clouds place.clouds.all %</p>
-            </div>
-        </Container>
+        <h5 className="mt-3">Today</h5>
+        <Col className="d-flex flex-wrap justify-content-between p-0 gap-1">
+                    
+            <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 ">
+
+                    <Col className="col-2" >
+                        <i className="fa-solid fa-wind fs-3"></i>
+                    </Col>
+                    <Col className="col-8">
+                        <p className="m-0 rem08">Wind speed</p>
+                        <p className="m-0">{resultsWeather.wind?.speed} km/h</p>
+                    </Col> 
+            </Col>
+
+            <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 ">
+
+                    <Col className="col-2" >
+                        <i className="fa-solid fa-temperature-three-quarters fs-3"></i>
+                    </Col>
+                    <Col className="col-8">
+                        <p className="m-0 rem08">Temperature</p>
+                        <p className="m-0">{resultsWeather.main?.temp.toFixed()} °C</p>
+                    </Col> 
+            </Col>
+            
+
+            
+            <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " >
+
+                    <Col className="col-2" >
+                        <i className="fa-solid fa-cloud-rain fs-3"></i>
+                    </Col>
+                    <Col className="col-8">
+                        <p className="m-0 rem08">Rain chance</p>
+                        <p className="m-0">{resultsWeather.clouds.all} %</p>
+                    </Col> 
+            </Col>
+
+            <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 ">
+
+                    <Col className="col-2" >
+                        <i className="fa-solid fa-percent fs-3"></i>
+                    </Col>
+                    <Col className="col-8">
+                        <p className="m-0 rem08">Humidity</p>
+                        <p className="m-0">{resultsWeather.main.humidity} %</p>
+                    </Col> 
+            </Col>
+                                    
+        </Col> 
         </>
     )
 }
 
 export default WeatherMain
 
-
-// {
-//     "coord": {
-//         "lon": -2.15,
-//         "lat": 57
-//     },
-//     "weather": [
-//         {
-//             "id": 804,
-//             "main": "Clouds",
-//             "description": "overcast clouds",
-//             "icon": "04d"
-//         }
-//     ],
-//     "base": "stations",
-//     "main": {
-//         "temp": 277.59,
-//         "feels_like": 272.64,
-//         "temp_min": 277.25,
-//         "temp_max": 278.53,
-//         "pressure": 1008,
-//         "humidity": 79,
-//         "sea_level": 1008,
-//         "grnd_level": 1008
-//     },
-//     "visibility": 10000,
-//     "wind": {
-//         "speed": 7.85,
-//         "deg": 232,
-//         "gust": 12.66
-//     },
-//     "clouds": {
-//         "all": 100
-//     },
-//     "dt": 1705677014,
-//     "sys": {
-//         "type": 2,
-//         "id": 2031790,
-//         "country": "GB",
-//         "sunrise": 1705653074,
-//         "sunset": 1705680396
-//     },
-//     "timezone": 0,
-//     "id": 2641549,
-//     "name": "Newtonhill",
-//     "cod": 200
-// }

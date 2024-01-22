@@ -2,8 +2,7 @@ import { useState } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import CustomHeader from './components/organisms/CustomHeader'
-import CustomFooter from './components/organisms/CustomFooter'
+
 import DirectMain from './components/organisms/DirectMain'
 import WeatherMain from './components/organisms/WeatherMain'
 import ForecastMain from './components/organisms/ForecastMain'

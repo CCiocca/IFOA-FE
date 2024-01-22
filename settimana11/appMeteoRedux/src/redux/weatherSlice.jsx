@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const weatherSlice = createSlice({
     name: 'weather',
-    initialState: {
+    initialState : {
         coord: {},
         weather:[],
         base: "",
@@ -17,15 +17,15 @@ export const weatherSlice = createSlice({
         id: 0,
         name: "",
         cod: 0
-
+    
     },
     reducers: {
-        setResultsWeather: (state, action) => {
-            state = action.payload
+        setResultsWeather: (state, action) =>{
+            return { ...state, ...action.payload };        
         },
     },
 })
 
-export const {setResultsWeather} = weatherSlice.actions
+export const {setResultsWeather} = weatherSlice.actions;
 
 export const weatherReducer = weatherSlice.reducer
