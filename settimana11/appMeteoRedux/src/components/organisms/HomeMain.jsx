@@ -3,37 +3,15 @@ import { Button, Card, Col, Container, Form, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { FetchData } from "../molecules/FetchData"
 import ResultsPlaces from "../molecules/ResultsPlaces"
+import { useDispatch, useSelector } from "react-redux"
 
 
 const HomeMain = () => {
     const [query, setQuery] = useState('')
-    const [resultsWeather, setResultsWeather] = useState(
-        {
-            coord: {},
-            weather:[],
-            base: "",
-            main: {},
-            visibility: 0,
-            wind:{},
-            clouds: {},
-            dt: 0,
-            sys: {},
-            timezone: 0,
-            id: 0,
-            name: "",
-            cod: 0
 
-        }
-    )
-    const [resultsForecast, setResultsForecast] = useState([
-        {
-            cod: "",
-            message: 0,
-            cnt: 0,
-            list: [],
-            city:{}
-        },
-    ])
+    const resultsWeather = useSelector((state)=>state.weather) 
+    const resultsForecast = useSelector((state)=>state.forecast) 
+    const dispatch = useDispatch()
 
     const APIkey = '36c6ba5e6cbbd2a3c701bf362b4629b9'
 
@@ -59,7 +37,7 @@ const HomeMain = () => {
             if (res.ok) {
                 const data = await res.json();
                 console.log(data);
-                setResultsWeather(data)
+                dispatch((data))
                 
             } else {
                 alert('No weather results')
