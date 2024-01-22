@@ -193,9 +193,26 @@ const HomeMain = () => {
 
                 {resultsForecast.list && resultsForecast.list.length > 0 &&
                 <>
-                <Col className="d-flex flex-wrap justify-content-between p-0 gap-1">
+                <Col className="d-flex flex-wrap justify-content-center p-0 gap-2 ">
+
+                    {resultsForecast.list.map((hour) => {
+                        return(
+                        <Col key={hour.dt} className="rounded cardsBackground d-flex p-2 align-items-center my-2 col-12" >
+
+                            <Col className="col-2" >
+                                <p>{hour.dt_txt}</p>
+                            </Col>
+                            <Col className="col-8">
+                                <p className="m-0 rem08">{hour.weather[0].main}</p>
+                                <p className="m-0">{hour.main.temp.toFixed()} °C</p>
+                            </Col> 
+                            
+                        </Col>
+                        
+                    )}
+                        )}
                     
-                    <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " >
+                    {/* <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " >
 
                             <Col className="col-2" >
                                 <i class="fa-solid fa-wind fs-3"></i>
@@ -241,7 +258,7 @@ const HomeMain = () => {
                                 <p className="m-0 rem08">Humidity</p>
                                 <p className="m-0">{resultsForecast.list[0]?.main.humidity} %</p>
                             </Col> 
-                    </Col>
+                    </Col> */}
                                             
                 </Col>
                 </>

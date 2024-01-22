@@ -125,7 +125,7 @@ const HomeMain = () => {
         <>
             <Row className="mx-auto mt-3 p-0">
                 <h2 className="bold big">{resultsWeather.name}</h2>
-                        <Col className="col-6"> <p className="display-3">{resultsWeather.main?.temp} °C</p></Col>
+                        <Col className="col-6"> <p className="display-3">{resultsWeather.main?.temp.toFixed()} °C</p></Col>
 
                         <Col className="col-6"> <p className="display-3">{resultsWeather.weather[0]?.main}</p></Col>
 
@@ -152,7 +152,7 @@ const HomeMain = () => {
                             </Col>
                             <Col className="col-8">
                                 <p className="m-0 rem08">Temperature</p>
-                                <p className="m-0">{resultsWeather.main?.temp} °C</p>
+                                <p className="m-0">{resultsWeather.main?.temp.toFixed()} °C</p>
                             </Col> 
                     </Col>
                     
@@ -191,7 +191,7 @@ const HomeMain = () => {
 {/* forecasts beginning */}
                 <h5 className="mt-3">Forecasts</h5>
 
-                {resultsForecast.list.length > 0 &&
+                {resultsForecast.list && resultsForecast.list.length > 0 &&
                 <>
                 <Col className="d-flex flex-wrap justify-content-between p-0 gap-1">
                     
@@ -214,7 +214,7 @@ const HomeMain = () => {
                             <Col className="col-8">
                                 <p className="m-0 rem08">Temperature</p>
                                 
-                                <p className="m-0">{resultsForecast.list[0]?.main.temp} °C</p>
+                                <p className="m-0">{resultsForecast.list[0]?.main.temp.toFixed()} °C</p>
                 
                             </Col> 
                     </Col>

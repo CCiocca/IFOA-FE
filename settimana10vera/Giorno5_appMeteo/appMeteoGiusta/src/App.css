@@ -89,3 +89,7 @@ body{
 .rem08{
   font-size: 0.8rem;
 }
+
+.center{
+  margin: 0 auto !important
+}
