@@ -62,7 +62,7 @@ const HomeMain = () => {
                 setResultsWeather(data)
                 
             } else {
-                alert('No results weather')
+                alert('No weather results')
             }
         }
         catch (err) {
@@ -80,7 +80,7 @@ const HomeMain = () => {
                 setResultsForecast(data)
                 
             } else {
-                alert('No results forecast')
+                alert('No forecast results')
             }
         }
         catch (err) {
@@ -97,9 +97,6 @@ const HomeMain = () => {
                 <Col className="mx-auto mb-3">
                     <h1>MoodieWeather</h1>
                 </Col>
-                {/* <Col className="mx-auto my-3">
-                    <Link to="/favourites">Favourites</Link>
-                </Col> */}
             </Row>
             <Row className="d-flex flex-row">
                 <Form className="mx-auto">
@@ -137,7 +134,7 @@ const HomeMain = () => {
                     <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 ">
 
                             <Col className="col-2" >
-                                <i class="fa-solid fa-wind fs-3"></i>
+                                <i className="fa-solid fa-wind fs-3"></i>
                             </Col>
                             <Col className="col-8">
                                 <p className="m-0 rem08">Wind speed</p>
@@ -148,7 +145,7 @@ const HomeMain = () => {
                     <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 ">
 
                             <Col className="col-2" >
-                                <i class="fa-solid fa-temperature-three-quarters fs-3"></i>
+                                <i className="fa-solid fa-temperature-three-quarters fs-3"></i>
                             </Col>
                             <Col className="col-8">
                                 <p className="m-0 rem08">Temperature</p>
@@ -161,7 +158,7 @@ const HomeMain = () => {
                     <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " >
 
                             <Col className="col-2" >
-                                <i class="fa-solid fa-cloud-rain fs-3"></i>
+                                <i className="fa-solid fa-cloud-rain fs-3"></i>
                             </Col>
                             <Col className="col-8">
                                 <p className="m-0 rem08">Rain chance</p>
@@ -172,7 +169,7 @@ const HomeMain = () => {
                     <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 ">
 
                             <Col className="col-2" >
-                                <i class="fa-solid fa-percent fs-3"></i>
+                                <i className="fa-solid fa-percent fs-3"></i>
                             </Col>
                             <Col className="col-8">
                                 <p className="m-0 rem08">Humidity</p>
@@ -193,56 +190,42 @@ const HomeMain = () => {
 
                 {resultsForecast.list && resultsForecast.list.length > 0 &&
                 <>
-                <Col className="d-flex flex-wrap justify-content-between p-0 gap-1">
-                    
-                    <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " >
+                <Col className="d-flex flex-wrap justify-content-center p-0 gap-2 ">
+
+                    {resultsForecast.list.map((hour) => {
+                        return(
+                        <Col key={hour.dt} className="rounded cardsBackground d-flex p-2 align-items-center my-2 col-12" >
 
                             <Col className="col-2" >
-                                <i class="fa-solid fa-wind fs-3"></i>
+                                <p>{hour.dt_txt}</p>
                             </Col>
                             <Col className="col-8">
-                                <p className="m-0 rem08">Wind speed</p>
-                                <p className="m-0">{resultsForecast.list[0]?.wind?.speed} km/h</p>
+                                <p className="m-0 rem08">{hour.weather[0].main}</p>
+                                <p className="m-0">{hour.main.temp.toFixed()} °C</p>
                             </Col> 
-                    </Col>
+                            <Col className="col-2">
+                                {(()=> {switch (hour.weather[0].main) {
+                                    case "Rain":
+                                        return <i className="fa-solid fa-cloud-rain fs-3"></i>
 
-                    <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 ">
+                                    case "Clouds":
+                                        return <i className="fa-solid fa-cloud fs-3"></i>
+                                    
+                                    case "Snow":
+                                        return <i className="fa-solid fa-snowflake fs-3"></i>
 
-                            <Col className="col-2" >
-                                <i class="fa-solid fa-temperature-three-quarters fs-3"></i>
-                            </Col>
-                            <Col className="col-8">
-                                <p className="m-0 rem08">Temperature</p>
+                                    case "Clear":
+                                        return <i className="fa-solid fa-sun fs-3"></i>
                                 
-                                <p className="m-0">{resultsForecast.list[0]?.main.temp.toFixed()} °C</p>
-                
+                                    default:
+                                        return null;
+                                }})()}
+                                <p className="m-0">{hour.main.temp.toFixed()} °C</p>
                             </Col> 
-                    </Col>
-                    
-
-                    
-                    <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 " >
-
-                            <Col className="col-2" >
-                                <i class="fa-solid fa-cloud-rain fs-3"></i>
-                            </Col>
-                            <Col className="col-8">
-                                <p className="m-0 rem08">Rain chance</p>
-                                <p className="m-0">{resultsForecast.list[0]?.clouds.all} %</p>
-                            </Col> 
-                    </Col>
-
-                    <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 ">
-
-                            <Col className="col-2" >
-                                <i class="fa-solid fa-percent fs-3"></i>
-                            </Col>
-                            <Col className="col-8">
-                                <p className="m-0 rem08">Humidity</p>
-                                <p className="m-0">{resultsForecast.list[0]?.main.humidity} %</p>
-                            </Col> 
-                    </Col>
-                                            
+                        </Col>
+                        
+                    )}
+                        )}                                            
                 </Col>
                 </>
             }
