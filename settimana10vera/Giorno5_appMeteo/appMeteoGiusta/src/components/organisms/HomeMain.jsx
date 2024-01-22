@@ -191,7 +191,7 @@ const HomeMain = () => {
 {/* forecasts beginning */}
                 <h5 className="mt-3">Forecasts</h5>
 
-                {resultsForecast.list.length > 0 &&
+                {resultsForecast.list && resultsForecast.list.length > 0 &&
                 <>
                 <Col className="d-flex flex-wrap justify-content-between p-0 gap-1">
                     
