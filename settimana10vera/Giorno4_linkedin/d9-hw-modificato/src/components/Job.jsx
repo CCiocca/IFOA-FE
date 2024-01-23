@@ -1,29 +1,17 @@
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Button } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import { ADD_FAVOURITE, REMOVE_FAVOURITE, addFavourite, removeFavourite } from '../actions/favouritesAction'
+import { Link } from 'react-router-dom'
+import { addFavourite } from '../actions/favouritesAction'
 
 
 const Job = ({ data }) => {
   
   const dispatch = useDispatch()
-  const favourites = useSelector (state => state.favourites)
-  
-  const navigate = useNavigate()
-  
 
-  const handleFavourites = (buba) => {
-    switch (buba) {
-      case ADD_FAVOURITE:
-        dispatch(addFavourite())
-        break;
-      case REMOVE_FAVOURITE
-        dispatch(removeFavourite())
-        break;
-    }
-     
-  }
-
+  // const handleClick = () => {
+  //   dispatch(addFavourite(data._id));
+  //   alert("Added to favourites")
+  // }
 
   return (
     <>
@@ -34,13 +22,13 @@ const Job = ({ data }) => {
     <Col xs={3}>
       <Link to={`/${data.company_name}`}>{data.company_name}</Link>
     </Col>
-    <Col xs={7}>
+    <Col xs={6}>
       <a href={data.url} target="_blank" rel="noreferrer">
         {data.title}
       </a>
     </Col>
-    <Col xs={2}>
-      <a onClick={() =>dispatch(addFavourite(data.company_name)) }>Add to favourites</a>
+    <Col xs={3}>
+      <Button variant="outline-warning"  onClick={() => dispatch(addFavourite(data.title))}>Add to favourites</Button>
       {/* <i className="bi bi-heart dark"></i> */}
     </Col>
   </Row>

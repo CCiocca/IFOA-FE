@@ -54,11 +54,11 @@ const SearchResults = () => {
             </Row>
             </>
             )
-            : (
-            <Alert variant="warning">
-            Please insert a title
-            </Alert>
-            )
+            // : (
+            // <Alert variant="warning">
+            // Please insert a title
+            // </Alert>
+            // )
         }
       </Container>     
     </>
