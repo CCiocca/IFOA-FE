@@ -28,7 +28,7 @@ const HomeMain = () => {
         setQuery(e.target.value)
     }
 
-    //onClick: fetch of datas based on city query 
+    //onClick, this function fetches the data based on city query 
     const fetchData = () => {
         fetchDataWeather()
         fetchDataForecast()

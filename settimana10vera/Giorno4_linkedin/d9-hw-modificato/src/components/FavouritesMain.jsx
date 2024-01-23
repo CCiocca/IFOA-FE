@@ -2,11 +2,31 @@ import { Button, Col, Container, ListGroup, ListGroupItem, Row } from "react-boo
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
 import { REMOVE_FAVOURITE } from "../actions/favouritesAction";
+import { useState } from "react";
+import { ConfirmDeleteAlert } from "./ConfirmDeleteAlert"
 
 const FavouritesMain = () => {
     const favouritesData = useSelector((state) => state.favourites);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const [showModal, setShowModal] = useState(false);
+
+
+
+    const handleClick = () => {
+        setShowModal(true);
+    }
+
+    const handleCloseModal = () => {
+        setShowModal(false)
+      }
+
+    const handleConfirmDelete = (favourite) => {
+        dispatch({type: REMOVE_FAVOURITE, payload: favourite});
+        setShowModal(false);
+    }
+    
 
     return(
         <Container>
@@ -25,13 +45,20 @@ const FavouritesMain = () => {
                              
                         <ListGroup.Item key={index} className="d-flex justify-content-between">
                             <Link to={`/${favourite.company_name}`}>{favourite.company_name}</Link>
-                            <Button variant="outline-danger" onClick={()=> dispatch({type: REMOVE_FAVOURITE, payload: favourite})}>Remove</Button>
+                            <Button variant="outline-danger" onClick={()=> handleClick(favourite)}>Remove</Button>
+                            <ConfirmDeleteAlert 
+                                show={showModal}
+                                handleCloseModal={handleCloseModal}
+                                handleConfirmDelete={() => handleConfirmDelete(favourite)}
+                                companyName={favourite.company_name}/>
                         </ListGroup.Item>
                     )) : (
                     <ListGroup.Item>There are no favourites</ListGroup.Item>
-                    ) }
+                    ) 
+                    }
                 </ListGroup>
             </Col>
+
     </Row>
     </Container>
     )

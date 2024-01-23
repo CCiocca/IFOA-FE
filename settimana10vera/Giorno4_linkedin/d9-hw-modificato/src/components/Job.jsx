@@ -1,26 +1,36 @@
 import { Row, Col, Button } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addFavourite } from '../actions/favouritesAction'
-import { useEffect } from 'react'
+import { useState } from 'react'
+import{ AddedAlert } from './AddedAlert.jsx'
 
 
 
 const Job = ({ jobData }) => {
-  // console.log(jobData, 'io sono loggetto che arriva a job')
-  
-  const favourites = useSelector((state)=> state.favourites)
+
+  const jobData
   const dispatch = useDispatch()
 
+  const [showModal, setShowModal] = useState(false);
+
   const handleClick = (jobData) => {
+    if(){       // I check that the company is not already among the favs
+
+    }    
+    
     dispatch(addFavourite(jobData));
-    alert("Added to favourites")
+    setShowModal(true);
+    }
+
+  const handleCloseModal = () => {
+    setShowModal(false)
   }
 
-// Aggiunta di una condizione per verificare se jobData è definito
-if (!jobData) {
-  return "ai caramba"; // o qualsiasi altra gestione che desideri in caso di jobData indefinito
-} 
+  // Aggiunta di una condizione per verificare se jobData è definito
+  if (!jobData) {
+    return "no job ad"; 
+  } 
 
   return (
     <>
@@ -37,10 +47,17 @@ if (!jobData) {
       </a>
     </Col>
     <Col xs={3}>
-      <Button variant="outline-warning"  onClick={() => handleClick(jobData)}>Add to favourites</Button>
-      {/* <i className="bi bi-heart dark"></i> */}
+      <Button variant="outline-success"  onClick={() => handleClick(jobData)}>Add to favourites
+      </Button>
     </Col>
+
+    {/* modal to confirm company was added */}
+    <AddedAlert 
+      show={showModal}
+      handleCloseModal={handleCloseModal}
+      companyName={jobData.company_name}/>
   </Row>
+
   </>
 )
 }

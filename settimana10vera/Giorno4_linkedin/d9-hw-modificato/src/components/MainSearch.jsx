@@ -38,7 +38,7 @@ const MainSearch = () => {
           <h1 className="display-1">Remote Jobs Search</h1>
         </Col>
         <Col xs={10} className="mx-auto my-3">
-          <Button variant="outline-primary" onClick={()=> navigate('/favourites')}>Favourites</Button>
+          <Button variant="outline-primary" onClick={()=> navigate('/favourites')}>See favourites</Button>
         </Col>
         
         <Col xs={10} className="mx-auto">

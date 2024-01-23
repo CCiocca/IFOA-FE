@@ -36,8 +36,9 @@ const CompanySearchResults = () => {
         <Col className="my-3">
           <h1 className="display-4">Job posting for: {params.company}</h1>
         </Col>
-        <Col xs={10} className="mx-auto my-3">
-          <Button variant="outline-primary" onClick={()=> navigate('/favourites')}>Favourites</Button>
+        <Col xs={10} className="my-3">
+          <Button className="me-2" variant="outline-primary" onClick={()=> navigate('/favourites')}>See favourites</Button>
+          <Button variant="outline-primary" onClick={()=> navigate('/')}>Home</Button>
         </Col>
         <Col>
           {jobs.map(jobData => (
