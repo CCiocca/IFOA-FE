@@ -12,20 +12,23 @@ const FavouritesMain = () => {
     const navigate = useNavigate();
 
     const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [companyToRemove, setCompanyToRemove] = useState('');
 
 
 
-    const handleClick = () => {
-        setShowDeleteModal(true);
+    const handleClick = (favourite) => {
+        setCompanyToRemove(favourite) //adding this function is essential so that the modal company name gets updated correctly, otherwise the modal shows the last element of the fav list in the modal, and removes that one 
+        setShowDeleteModal(true); //modal appears
     }
 
     const handleCloseModal = () => {
-        setShowDeleteModal(false)
+        setShowDeleteModal(false) //modal gets closed
+        setCompanyToRemove('') // to avoid random damages, let's reset the const to an empty string when modal gets closed by the user
       }
 
-    const handleConfirmDelete = (favourite) => {
-        dispatch({type: REMOVE_FAVOURITE, payload: favourite});
-        setShowDeleteModal(false);
+    const handleConfirmDelete = (companyToRemove) => {
+        dispatch({type: REMOVE_FAVOURITE, payload: companyToRemove}); //this allows to remove the desired company from the store
+        setShowDeleteModal(false); //modal gets closed
     }
     
 
@@ -50,8 +53,8 @@ const FavouritesMain = () => {
                             <ConfirmDeleteAlert 
                                 show={showDeleteModal}
                                 handleCloseModal={handleCloseModal}
-                                handleConfirmDelete={() => handleConfirmDelete(favourite)}
-                                companyName={favourite.company_name}/>
+                                handleConfirmDelete={() => handleConfirmDelete(companyToRemove)}
+                                companyName={companyToRemove.company_name}/>
                         </ListGroup.Item>
                     )) : (
                     <ListGroup.Item>There are no favourites</ListGroup.Item>
