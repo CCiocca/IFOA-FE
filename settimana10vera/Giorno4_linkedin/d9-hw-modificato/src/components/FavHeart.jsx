@@ -27,6 +27,6 @@ export const FavHeart = ({jobId, companyName}) => {
 
 
     return (
-        <i id={`heart-${jobId}`} className="fa-heart"></i>
+        <i id={`heart-${jobId}`} className="fa-heart fs-2"></i>
     )
 }
