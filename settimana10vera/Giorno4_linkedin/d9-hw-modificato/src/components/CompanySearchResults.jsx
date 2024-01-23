@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Job from "./Job";
 import { useNavigate, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+
 
 const CompanySearchResults = () => {
+
   const [jobs, setJobs] = useState([]);
   const params = useParams();
   const navigate = useNavigate()

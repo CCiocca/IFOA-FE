@@ -2,10 +2,17 @@ import { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Job from "./Job";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addJobsList } from "../actions/favouritesAction";
+
 
 const MainSearch = () => {
   const [query, setQuery] = useState("");
-  const [jobs, setJobs] = useState([]);
+
+  const jobsList = useSelector((state) => state.jobsList) //array from the store which contain the companies of the last search the user made
+  const dispatch = useDispatch()
+
+
 
   const navigate = useNavigate();
 
@@ -22,7 +29,7 @@ const MainSearch = () => {
       const response = await fetch(baseEndpoint + query + "&limit=20");
       if (response.ok) {
         const { data } = await response.json();
-        setJobs(data);
+        dispatch(addJobsList(data))
       } else {
         alert("Error fetching results");
       }
@@ -47,7 +54,7 @@ const MainSearch = () => {
           </Form>
         </Col>
         <Col xs={10} className="mx-auto mb-5">
-          {jobs.map(jobData => (
+          {jobsList.map(jobData => (
             <Job key={jobData._id} jobData={jobData} />
           ))}
         </Col>

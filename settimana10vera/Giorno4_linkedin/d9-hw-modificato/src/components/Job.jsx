@@ -1,5 +1,5 @@
 import { Row, Col, Button } from 'react-bootstrap'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addFavourite } from '../actions/favouritesAction'
 import { useState } from 'react'
@@ -9,25 +9,31 @@ import{ AddedAlert } from './AddedAlert.jsx'
 
 const Job = ({ jobData }) => {
 
-  const jobData
+  const favouritesData = useSelector((state) => state.favourites);
   const dispatch = useDispatch()
 
   const [showModal, setShowModal] = useState(false);
 
+  
   const handleClick = (jobData) => {
-    if(){       // I check that the company is not already among the favs
 
-    }    
-    
-    dispatch(addFavourite(jobData));
+    // I check that the company is not already among the favs
+    const isCompanyInFavourites = favouritesData.some((favourite) => favourite.company_name === jobData.company_name )
+  
+    // If the company is not yet in the favourites, it is added, else it is not. I left the modal tue so that the user knows that the company is in its favourites anyways
+    if(!isCompanyInFavourites) {
+      dispatch(addFavourite(jobData));
+      }
     setShowModal(true);
-    }
+  }
 
+  //this allows to dismiss the modal. It also closes when the user clics outside the modal
   const handleCloseModal = () => {
     setShowModal(false)
   }
 
-  // Aggiunta di una condizione per verificare se jobData è definito
+
+  // This if verifies that jobData is defined
   if (!jobData) {
     return "no job ad"; 
   } 

@@ -35,7 +35,7 @@ const FavouritesMain = () => {
             style={{ border: '1px solid #00000033', borderRadius: 4 }}
             >
                 <Col>
-                <h1>Favourites</h1>
+                <h1>Favourite Companies</h1>
                 <Button variant="outline-primary" onClick={()=> navigate('/')}>Home</Button>
                 </Col>
                 <Col className="mt-4">
