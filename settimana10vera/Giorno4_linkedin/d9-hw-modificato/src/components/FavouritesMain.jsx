@@ -1,3 +1,4 @@
+
 import { Button, Col, Container, ListGroup, ListGroupItem, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
@@ -10,21 +11,21 @@ const FavouritesMain = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const [showModal, setShowModal] = useState(false);
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
 
 
 
     const handleClick = () => {
-        setShowModal(true);
+        setShowDeleteModal(true);
     }
 
     const handleCloseModal = () => {
-        setShowModal(false)
+        setShowDeleteModal(false)
       }
 
     const handleConfirmDelete = (favourite) => {
         dispatch({type: REMOVE_FAVOURITE, payload: favourite});
-        setShowModal(false);
+        setShowDeleteModal(false);
     }
     
 
@@ -47,7 +48,7 @@ const FavouritesMain = () => {
                             <Link to={`/${favourite.company_name}`}>{favourite.company_name}</Link>
                             <Button variant="outline-danger" onClick={()=> handleClick(favourite)}>Remove</Button>
                             <ConfirmDeleteAlert 
-                                show={showModal}
+                                show={showDeleteModal}
                                 handleCloseModal={handleCloseModal}
                                 handleConfirmDelete={() => handleConfirmDelete(favourite)}
                                 companyName={favourite.company_name}/>

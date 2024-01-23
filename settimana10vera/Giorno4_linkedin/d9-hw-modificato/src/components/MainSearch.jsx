@@ -10,10 +10,8 @@ const MainSearch = () => {
   const [query, setQuery] = useState("");
 
   const jobsList = useSelector((state) => state.jobsList) //array from the store which contain the companies of the last search the user made
+  
   const dispatch = useDispatch()
-
-
-
   const navigate = useNavigate();
 
   const baseEndpoint = "https://strive-benchmark.herokuapp.com/api/jobs?search=";
@@ -37,6 +35,7 @@ const MainSearch = () => {
       console.log(error);
     }
   };
+
 
   return (
     <Container>
