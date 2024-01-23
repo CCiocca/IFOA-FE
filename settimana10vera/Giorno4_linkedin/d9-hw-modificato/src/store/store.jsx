@@ -1,7 +1,8 @@
 import { createStore } from "redux";
-import rootReducer from "../reducers/rootReducer";
+import favouritesReducer from "../reducers/favouritesReducer";
 
 
-const store = createStore(rootReducer)
+
+const store = createStore(favouritesReducer)
 
 export default store

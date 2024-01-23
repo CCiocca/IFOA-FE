@@ -4,28 +4,30 @@ import { Link, useNavigate } from "react-router-dom"
 import { REMOVE_FAVOURITE } from "../actions/favouritesAction";
 
 const FavouritesMain = () => {
-    const favouritesData = useSelector(state => state.favourites);
+    const favouritesData = useSelector((state) => state.favourites);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     return(
         <Container>
             <Row
-            className="mx-0 mt-3 p-3"
+            className="mx-0 mt-3 p-3 d-flex flex-column"
             style={{ border: '1px solid #00000033', borderRadius: 4 }}
             >
                 <Col>
                 <h1>Favourites</h1>
                 <Button variant="outline-primary" onClick={()=> navigate('/')}>Home</Button>
                 </Col>
-                <Col>
+                <Col className="mt-4">
                 <ListGroup>
                     { favouritesData?.length > 0 ? (
-                        favouritesData.map((favourite, index) => {
-                        <ListGroup.Item key={index}>{favourite}
+                        favouritesData.map((favourite, index) => 
+                             
+                        <ListGroup.Item key={index} className="d-flex justify-content-between">
+                            <Link to={`/${favourite.company_name}`}>{favourite.company_name}</Link>
                             <Button variant="outline-danger" onClick={()=> dispatch({type: REMOVE_FAVOURITE, payload: favourite})}>Remove</Button>
                         </ListGroup.Item>
-                    })) : (
+                    )) : (
                     <ListGroup.Item>There are no favourites</ListGroup.Item>
                     ) }
                 </ListGroup>
@@ -37,6 +39,14 @@ const FavouritesMain = () => {
 
 export default FavouritesMain
 
+
+// // if the state already contains the company, return an alert
+// if (state.favourites.some(existingCompany => existingCompany._id === company._id)) {
+//     alert("This company is already present in favourites");
+//     return {
+//         type: null, // if the company is present, dont do anything
+//     };
+// } else {
 
 {/*          <>
          <Col xs={3}>

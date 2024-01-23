@@ -1,17 +1,26 @@
 import { Row, Col, Button } from 'react-bootstrap'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addFavourite } from '../actions/favouritesAction'
+import { useEffect } from 'react'
 
 
-const Job = ({ data }) => {
+
+const Job = ({ jobData }) => {
+  // console.log(jobData, 'io sono loggetto che arriva a job')
   
+  const favourites = useSelector((state)=> state.favourites)
   const dispatch = useDispatch()
 
-  // const handleClick = () => {
-  //   dispatch(addFavourite(data._id));
-  //   alert("Added to favourites")
-  // }
+  const handleClick = (jobData) => {
+    dispatch(addFavourite(jobData));
+    alert("Added to favourites")
+  }
+
+// Aggiunta di una condizione per verificare se jobData è definito
+if (!jobData) {
+  return "ai caramba"; // o qualsiasi altra gestione che desideri in caso di jobData indefinito
+} 
 
   return (
     <>
@@ -20,15 +29,15 @@ const Job = ({ data }) => {
     style={{ border: '1px solid #00000033', borderRadius: 4 }}
   >
     <Col xs={3}>
-      <Link to={`/${data.company_name}`}>{data.company_name}</Link>
+      <Link to={`/${jobData.company_name}`}>{jobData.company_name}</Link>
     </Col>
     <Col xs={6}>
-      <a href={data.url} target="_blank" rel="noreferrer">
-        {data.title}
+      <a href={jobData.url} target="_blank" rel="noreferrer">
+        {jobData.title}
       </a>
     </Col>
     <Col xs={3}>
-      <Button variant="outline-warning"  onClick={() => dispatch(addFavourite(data.title))}>Add to favourites</Button>
+      <Button variant="outline-warning"  onClick={() => handleClick(jobData)}>Add to favourites</Button>
       {/* <i className="bi bi-heart dark"></i> */}
     </Col>
   </Row>

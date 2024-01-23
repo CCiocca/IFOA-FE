@@ -3,11 +3,12 @@ export const REMOVE_FAVOURITE = 'REMOVE_FAVOURITE'
 
 
 export const addFavourite = (company) => {
-    return {
+        return {
         type: ADD_FAVOURITE,
         payload: company
-    }
+        }
 }
+
 
 export const removeFavourite = (company) => {
     return {
