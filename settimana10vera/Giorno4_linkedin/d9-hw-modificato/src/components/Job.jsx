@@ -48,7 +48,7 @@ const Job = ({ jobData }) => {
     style={{ border: '1px solid #00000033', borderRadius: 4 }}
   >
     <Col xs={1}>
-      <FavHeart jobId={jobData._id} companyName={jobData.company_name} />
+      <FavHeart jobId={jobData._id} companyName={jobData.company_name}/>
     </Col>
     <Col xs={3}>
       <Link to={`/${jobData.company_name}`}>{jobData.company_name}</Link>

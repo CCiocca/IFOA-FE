@@ -38,11 +38,11 @@ const FavouritesMain = () => {
             className="mx-0 mt-3 p-3 d-flex flex-column"
             style={{ border: '1px solid #00000033', borderRadius: 4 }}
             >
-                <Col>
-                <h1>Favourite Companies</h1>
+                <Col xs={10} className="mx-auto my-3">
+                <h1 className="display-4">Favourite Companies</h1>
                 <Button variant="outline-primary" onClick={()=> navigate('/')}>Home</Button>
                 </Col>
-                <Col className="mt-4">
+                <Col xs={10} className="mx-auto mb-5 mt-3">
                 <ListGroup>
                     { favouritesData?.length > 0 ? (
                         favouritesData.map((favourite, index) => 
