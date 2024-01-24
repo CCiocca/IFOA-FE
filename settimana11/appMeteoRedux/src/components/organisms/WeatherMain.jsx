@@ -8,7 +8,7 @@ const WeatherMain = () => {
 
     return(
         <>
-        <h5 className="mt-3">Today</h5>
+        <h5 className="mt-2">Today</h5>
         <Col className="d-flex flex-wrap justify-content-between p-0 gap-1">
                     
             <Col className="rounded cardsBackground d-flex p-2 align-items-center my-2 ">

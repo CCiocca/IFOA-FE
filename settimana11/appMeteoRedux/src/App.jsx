@@ -17,7 +17,7 @@ function App() {
           {/* <CustomHeader/> */}
             <Routes>
               <Route path='/' element={<HomeMain />}/>
-              {/* <Route path='/geo/1.0/direct' element={<DirectMain />}/> */}
+              {/* <Route path='/geo/1.0/direct/:city' element={<DirectMain />}/> */}
               <Route path='/data/2.5/weather' element={<WeatherMain />}/>
               <Route path='/data/2.5/forecast' element={<ForecastMain />}/>
               <Route path='*' element={<NotFound />}/>

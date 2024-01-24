@@ -46,6 +46,10 @@ h1{
   font-weight: 800;
 }
 
+.semibold{
+  font-weight: 500;
+}
+
 .big{
   font-size: 3rem;
 }
@@ -63,7 +67,9 @@ h1{
   width: 20rem;
 }
 
-/* mediaquery */
+.blueBackground{
+  background-color: rgb(10, 10, 80);
+}
 
 .rem08{
   font-size: 0.8rem;

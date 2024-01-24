@@ -9,18 +9,18 @@ const ForecastMain = () => {
 
     
     return(
-        // <Col className="col-12 d-flex flex-wrap justify-content-center p-0 gap-2 flex-row ">
-        
+      
     <>
     <h5 className="mt-3">Forecasts</h5>
 
     {resultsForecast.list && resultsForecast.list.length > 0 &&
     <>
-    <Row className="d-flex flex-column p-0 m-0">
-    <Col className="p-0 col-lg-8"> 
+    <Row className="d-flex flex-column flex-md-row m-0 p-0">
+    <Col className="p-0 col-12 col-md-8"> 
         <ForecastChart/>
     </Col>   
-    <Col className="col-12 d-flex justify-content-center p-0 gap-2 flex-row">
+    <Col className="col-12 col-md-4 d-flex justify-content-center p-0 gap-1 flex-row flex-wrap overflow-hidden">
+        <div className="scrollbar">
     
         {resultsForecast.list.map((forecastByHour) => {
             
@@ -31,25 +31,28 @@ const ForecastMain = () => {
             const minutes = date.getMinutes().toString().padStart(2, '0');
 
             return(
-               
-            <div key={forecastByHour.dt} className="rounded cardsForecast d-flex p-2 align-items-center justify-content-center my-2 col-1 flex-column g-1" >
 
-                <Col className="mb-3" >
+            <Col key={forecastByHour.dt} className="rounded cardsForecast d-flex align-items-center p-2 my-1 col-12">
+
+                <Col className="col-3" >
                     <p className="m-0 p-0 rem08">{day}/{month}<br/>{hour}:{minutes}</p>
                 </Col>
                 <Col className="col-7">
                     {(()=> {switch (forecastByHour.weather[0].main) {
                         case "Rain":
-                            return <i className="fa-solid fa-cloud-rain rem2"></i>
+                            return <i className="fa-solid fa-cloud-rain fs-3"></i>
 
                         case "Clouds":
-                            return <i className="fa-solid fa-cloud rem2"></i>
+                            return <i className="fa-solid fa-cloud fs-3"></i>
                         
                         case "Snow":
-                            return <i className="fa-solid fa-snowflake rem2"></i>
+                            return <i className="fa-solid fa-snowflake fs-3"></i>
 
                         case "Clear":
-                            return <i className="fa-solid fa-sun rem2"></i>
+                            return <i className="fa-solid fa-sun fs-3"></i>
+                        
+                        case "Mist":
+                            return <i className="fa-solid fa-smog fs-3"></i>
                     
                         default:
                             return null;
@@ -59,11 +62,11 @@ const ForecastMain = () => {
                 <Col className="col-2 d-flex justify-content-center align-items-center">
                     <p className="rem2 m-0 d-inline">{forecastByHour.main.temp.toFixed()}</p><p className="rem08 m-0 d-inline">°C</p>
                 </Col> 
-            </div>
+            </Col>
             
         )}
             )}   
- 
+        </div>
     </Col>
     </Row>     
     </>

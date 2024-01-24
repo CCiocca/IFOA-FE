@@ -6,22 +6,26 @@ import WeatherMain from "./WeatherMain";
 import { useEffect, useState } from "react";
 import ForecastMain from "./ForecastMain";
 import ForecastChart from "./ForecastChart";
+import { ErrorMessageQuery } from "../molecules/ErrorMessageQuery";
 
 
 const HomeMain = () => {
     const [query, setQuery] = useState('')
 
-    // I substitute the useState with the useSelector which get the values of the states from the store, I use dispatch to update the state values
+    const [showModal, setShowModal] = useState(false);    //this modal pops up when the query is not a valid search parameter for the API
 
+    // I substitute the useState with the useSelector which get the values of the states from the store, I use dispatch to update the state values
+    
     const resultsWeather = useSelector((state)=>state.weather) 
     const resultsForecast = useSelector((state)=>state.forecast) 
     const dispatch = useDispatch();
     
+
     const APIkey = '36c6ba5e6cbbd2a3c701bf362b4629b9'
 
-    const urlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${APIkey}&units=metric`
+    const urlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${APIkey}&units=metric` //api to populate weather elements
 
-    const urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=${APIkey}&units=metric`
+    const urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=${APIkey}&units=metric` // api to populate forecast elements
 
     //When the user writes in the input, the query value gets updated
     const handleChange = (e) => {
@@ -32,6 +36,7 @@ const HomeMain = () => {
     const fetchData = () => {
         fetchDataWeather()
         fetchDataForecast()
+        setQuery('')//to empty the search field when the search is done
         }
 
 
@@ -41,15 +46,15 @@ const HomeMain = () => {
             console.log(urlWeather);
             if (res.ok) {
                 const data = await res.json();
-                dispatch(setResultsWeather(data))                
+                dispatch(setResultsWeather(data))    //the fetched data are dispatched and saved in the store            
             } else {
-                alert('No weather results')
+                setShowModal(true)
             }
         }
         catch (err) {
             console.log(err)
         }
-    }
+    };
 
     const fetchDataForecast = async () => {
         try {
@@ -58,30 +63,36 @@ const HomeMain = () => {
             if (res.ok) {
                 const data = await res.json();
                 console.log(data);
-                dispatch(setResultsForecast(data));
+                dispatch(setResultsForecast(data));     //the fetched data are dispatched and saved in the store
                 console.log("io sono lo store forecast", resultsForecast)
-
-            } else {
-                alert('No forecast results')
-            }
+            }    //the else here is covered by the previous fetchDataWeather which opens an error modal, I don't repeat it here else there will be 2 modals for each wrong input
         }
         catch (err) {
             console.log(err)
         }
-    }
+    };
+
+
+    //this allows to dismiss the modal. It also closes when the user clics outside the modal
+    const handleCloseModal = () => {
+        setShowModal(false)
+      }
 
 
     return(
         <>
-        <Container className="d-flex flex-column">
-            <Row className="d-flex flex-column"> 
-                <Col className="mx-auto mb-3">
-                    <h1>MoodieWeather</h1>
+        <Container>
+            <Row className="d-flex flex-column flex-md-row justify-content-between"> 
+                <Col className=" mb-1">
+                    <h1 className="fs-2">MoodieWeather</h1>
                 </Col>
-            </Row>
-            <Row className="d-flex flex-row">
-                <Form className="mx-auto">
-                    <Col className="mx-auto mb-5 d-flex justify-content-around col-md-8">
+            
+                <Col className="mx-auto mb-4 d-flex justify-content-around col-md-8">
+                <Form className="mx-auto d-flex"
+                    onSubmit={(e) => {
+                        e.preventDefault(); // to avoid form submit
+                        fetchData(); // to fetchData when user presses Enter key
+                      }}>
                     <Form.Control
                                 type="text"
                                 placeholder="Search a city"
@@ -91,10 +102,14 @@ const HomeMain = () => {
                                 onChange={handleChange}
                                 />
 
-                    <Button type="button" onClick={() => fetchData()}>Search</Button>
-                    </Col>
+                    <Button type="button" variant="outline-light" onClick={() => fetchData()}>Search</Button> 
                 </Form>
+                    </Col>
             </Row>
+            <ErrorMessageQuery
+                  show={showModal}
+                  handleCloseModal={handleCloseModal}
+                  />
 
                 
                                         
@@ -102,10 +117,13 @@ const HomeMain = () => {
 
         <>
             <Row className="mx-auto mt-3 p-0">
+                <Col className="col-12">
                 <h2 className="bold big">{resultsWeather.name}</h2>
-                        <Col className="col-6"> <p className="display-3">{resultsWeather.main?.temp.toFixed()} °C</p></Col>
+                </Col>
+                
+                <Col className="col-6"> <p className="display-3 semibold">{resultsWeather.main?.temp.toFixed()} °C</p></Col>
 
-                        <Col className="col-6"> <p className="display-3">{resultsWeather.weather[0]?.main}</p></Col>
+                <Col className="col-6"> <p className="display-3 semibold">{resultsWeather.weather[0]?.main}</p></Col>
 
                 <WeatherMain/>
                 <ForecastMain />   

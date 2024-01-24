@@ -18,8 +18,8 @@ const Job = ({ jobData }) => {
   
   const handleClick = (jobData) => {
 
-      // I check that the company is not already among the favs
-    const isCompanyInFavourites = favouritesData.some((favourite) => favourite.company_name === jobData.company_name )
+      
+    const isCompanyInFavourites = favouritesData.some((favourite) => favourite.company_name === jobData.company_name ) // I check that the company is not already among the favs
   
      // If the company is not yet in the favourites, it is added, else it is not. I left the modal tue so that the user knows that the company is in its favourites anyways
     if(!isCompanyInFavourites) {

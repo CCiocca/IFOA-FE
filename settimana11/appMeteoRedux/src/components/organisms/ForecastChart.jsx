@@ -9,13 +9,15 @@ const ForecastChart = () => {
 
   const data = resultsForecast.list.map((item) => ({
     timestamp: item.dt * 1000,
-    temp: item.main.temp,
+    temp_min: item.main.temp_min,
+    // temp_max: item.main.temp_max,
+    //commented beacuse the api gave the same min and max for the X hour
   }));
 
   const isSmallScreen = window.innerWidth <= 767;
 
   return (
-    <ResponsiveContainer width="100%" height={isSmallScreen ? 200 : 400} className="responsiveGraphWrap">
+    <ResponsiveContainer className="responsiveGraphWrap">
       <LineChart
         width={500}
         height={500}
@@ -39,7 +41,8 @@ const ForecastChart = () => {
         <YAxis tick={{ fill: 'white' }}/>
         <Tooltip />
 
-        <Line type="monotone" dataKey="temp" stroke="black" activeDot={{ r: 8 }} />
+        <Line type="monotone" dataKey="temp_min" stroke="blue" activeDot={{ r: 8 }} />
+        {/* <Line type="monotone" dataKey="temp_max" stroke="red" activeDot={{ r: 8 }} /> */}
       </LineChart>
     </ResponsiveContainer>
   );
