@@ -2,22 +2,19 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useSelector } from 'react-redux';
-import { Col } from 'react-bootstrap';
 
 const ForecastChart = () => {
-  const resultsForecast = useSelector((state) => state.forecast);
+  const resultsForecast = useSelector((state) => state.forecast); //gets the resultsForecast from the store
 
   const data = resultsForecast.list.map((item) => ({
     timestamp: item.dt * 1000,
     temp_min: item.main.temp_min,
     // temp_max: item.main.temp_max,
     //commented beacuse the api gave the same min and max for the X hour
-  }));
-
-  const isSmallScreen = window.innerWidth <= 767;
+  })); //this allows to process the timestams given by API into readable date and time format
 
   return (
-    <ResponsiveContainer className="responsiveGraphWrap">
+    <ResponsiveContainer className="responsiveGraphWrap"> 
       <LineChart
         width={500}
         height={500}
@@ -37,6 +34,7 @@ const ForecastChart = () => {
                 const formattedDate = date.toLocaleDateString(undefined, { day: 'numeric', month: 'numeric' });
                 return formattedDate;
               }}
+              //this allows to process the timestams given by API into readable date and time forma
               tick={{ fill: 'white' }} /> 
         <YAxis tick={{ fill: 'white' }}/>
         <Tooltip />

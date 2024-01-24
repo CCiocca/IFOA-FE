@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setResultsWeather } from "../../redux/weatherSlice";
 import { setResultsForecast } from "../../redux/forecastSlice";
 import WeatherMain from "./WeatherMain";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ForecastMain from "./ForecastMain";
-import ForecastChart from "./ForecastChart";
 import { ErrorMessageQuery } from "../molecules/ErrorMessageQuery";
 
 
@@ -16,9 +15,9 @@ const HomeMain = () => {
 
     // I substitute the useState with the useSelector which get the values of the states from the store, I use dispatch to update the state values
     
-    const resultsWeather = useSelector((state)=>state.weather) 
-    const resultsForecast = useSelector((state)=>state.forecast) 
-    const dispatch = useDispatch();
+    const resultsWeather = useSelector((state)=>state.weather) // this gets the resultsWeather from the redux store
+    const resultsForecast = useSelector((state)=>state.forecast) // this gets the resultsForecast from the redux store
+    const dispatch = useDispatch(); //this allows to store new data in the redux store
     
 
     const APIkey = '36c6ba5e6cbbd2a3c701bf362b4629b9'
@@ -90,8 +89,8 @@ const HomeMain = () => {
                 <Col className="mx-auto mb-4 d-flex justify-content-around col-md-8">
                 <Form className="mx-auto d-flex"
                     onSubmit={(e) => {
-                        e.preventDefault(); // to avoid form submit
-                        fetchData(); // to fetchData when user presses Enter key
+                        e.preventDefault(); // to avoid form submit when user clicks enter key
+                        fetchData(); // to fetchData when user clicks Enter key
                       }}>
                     <Form.Control
                                 type="text"
@@ -103,13 +102,15 @@ const HomeMain = () => {
                                 />
 
                     <Button type="button" variant="outline-light" onClick={() => fetchData()}>Search</Button> 
+                    {/* this button calls the function fetchData at onClick */}
                 </Form>
                     </Col>
             </Row>
             <ErrorMessageQuery
                   show={showModal}
                   handleCloseModal={handleCloseModal}
-                  />
+                  /> 
+                  {/* these props are passed to the component */}
 
                 
                                         
@@ -120,11 +121,12 @@ const HomeMain = () => {
                 <Col className="col-12">
                 <h2 className="bold big">{resultsWeather.name}</h2>
                 </Col>
-                
+
                 <Col className="col-6"> <p className="display-3 semibold">{resultsWeather.main?.temp.toFixed()} °C</p></Col>
+                {/* toFixed aproximates the decimals, in this case the setting is no decimals */}
 
                 <Col className="col-6"> <p className="display-3 semibold">{resultsWeather.weather[0]?.main}</p></Col>
-
+                {/* this gets inside the resultsWeather, gets the first(and only) element of the  weather array checking if it exists and then it gets to the property main*/}
                 <WeatherMain/>
                 <ForecastMain />   
                                   

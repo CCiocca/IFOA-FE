@@ -4,7 +4,7 @@ import { Col } from "react-bootstrap";
 
 
 const WeatherMain = () => {
-    const resultsWeather = useSelector((state)=>state.weather) 
+    const resultsWeather = useSelector((state)=>state.weather) // this gets the resultsWeather from the redux store
 
     return(
         <>
@@ -30,6 +30,8 @@ const WeatherMain = () => {
                     <Col className="col-8">
                         <p className="m-0 rem08">Temperature</p>
                         <p className="m-0">{resultsWeather.main?.temp_min.toFixed()}°C - {resultsWeather.main?.temp_max.toFixed()}°C</p>
+                        {/* toFixed aproximates the decimals, in this case the setting is no decimals */}
+
                     </Col> 
             </Col>
             
