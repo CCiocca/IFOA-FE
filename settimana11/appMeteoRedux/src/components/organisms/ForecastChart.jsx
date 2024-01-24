@@ -23,7 +23,7 @@ const ForecastChart = () => {
         margin={{
           top: 10,
           right: 30,
-          left: 0,
+          left: -30,
           bottom: 5,
         }}
       >
