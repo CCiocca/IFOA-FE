@@ -1,7 +1,0 @@
-#studenti li::before {
-    content: 'Studente ';
-}
-
-#errore {
-    color: red;
-}
