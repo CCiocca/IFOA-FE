@@ -24,7 +24,8 @@ header{
     top: 0;
     background-color: #ffc017 ;
     border-bottom: 1px solid black;
-    height: 100px
+    height: 100px;
+    z-index: 1;
 }
 
 .sfondoBianco{
@@ -136,6 +137,7 @@ nav button:hover{
 
 .containerM{
     margin-right: -50px;
+    z-index: 0;
 }
 
 
@@ -304,9 +306,10 @@ aside {
     display: flex;
     flex-direction: column;
     position: sticky;
-    top: 100px;
+    top: 110px;
     z-index: 3;
-    height: 500px
+    height: 500px;
+    background-color: white
 }
 
 aside h3{

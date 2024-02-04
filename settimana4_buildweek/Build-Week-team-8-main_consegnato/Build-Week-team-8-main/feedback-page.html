@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Page</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    
+    <header id="feedbackLogo">
+      <img src="assets/images/epicode_logo.png" alt="logo" />
+    </header>
+    <div id="feedbackContainer">
+      
+
+      <main>
+        <div>
+          <h1>Tell us how it's going</h1>
+          <h4>
+            From 0 to 10, how likely are you to recommend EPICODE to a friend or
+            a colleague?
+          </h4>
+          
+            <div class="rating">
+              <span class="star" onmouseover="highlightStars(this)" onmouseout="resetStars()" onclick="clickStar(this)">&#9733;</span>
+              <span class="star" onmouseover="highlightStars(this)" onmouseout="resetStars()" onclick="clickStar(this)">&#9733;</span>
+              <span class="star" onmouseover="highlightStars(this)" onmouseout="resetStars()" onclick="clickStar(this)">&#9733;</span>
+              <span class="star" onmouseover="highlightStars(this)" onmouseout="resetStars()" onclick="clickStar(this)">&#9733;</span>
+              <span class="star" onmouseover="highlightStars(this)" onmouseout="resetStars()" onclick="clickStar(this)">&#9733;</span>
+              <span class="star" onmouseover="highlightStars(this)" onmouseout="resetStars()" onclick="clickStar(this)">&#9733;</span>
+              <span class="star" onmouseover="highlightStars(this)" onmouseout="resetStars()" onclick="clickStar(this)">&#9733;</span>
+              <span class="star" onmouseover="highlightStars(this)" onmouseout="resetStars()" onclick="clickStar(this)">&#9733;</span>
+              <span class="star" onmouseover="highlightStars(this)" onmouseout="resetStars()" onclick="clickStar(this)">&#9733;</span>
+              <span class="star" onmouseover="highlightStars(this)" onmouseout="resetStars()" onclick="clickStar(this)">&#9733;</span>
+          </div>
+          
+          </div>
+        
+        <div>
+          <h4>Leave us an open feedback about your experience so far</h4>
+          <input type="text" id="commentArea" placeholder="Write your comment here" />
+        </div>
+      </main>
+
+      <footer >
+        <button id="moreInfoBtn"><span>MORE INFO</span></button>
+      </footer>
+    </div>
+       
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/feedback.js"></script>
+  </body>
+</html>
